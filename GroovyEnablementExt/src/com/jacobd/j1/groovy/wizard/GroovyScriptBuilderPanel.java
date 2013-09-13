@@ -5,7 +5,7 @@ import oracle.jdeveloper.builder.file.FileBuilderPanel;
 /**
  * @author jdanner
  */
-public class GroovyFileBuilderPanel extends FileBuilderPanel
+public class GroovyScriptBuilderPanel extends FileBuilderPanel
 {
 
 }

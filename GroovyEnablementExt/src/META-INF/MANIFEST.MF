@@ -25,4 +25,5 @@ Require-Bundle: oracle.ide,
  oracle.jdeveloper.gotojava,
  oracle.jdeveloper.jgoodies,
  oracle.jdeveloper.json,
- oracle.idert
+ oracle.idert,
+ oracle.icons

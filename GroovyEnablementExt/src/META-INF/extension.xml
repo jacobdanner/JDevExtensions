@@ -10,7 +10,42 @@
                description="The Groovy Home installed by the com.jacob.j1.groovy.installer"
                implClass="com.jacobd.j1.groovy.macro.GroovyHomeMacro" />
      </externaltools>
-      <gallery xmlns="http://xmlns.oracle.com/jdeveloper/1013/extension"/>
+      <gallery xmlns="http://xmlns.oracle.com/jdeveloper/1013/extension">
+        <folders>
+          <name label="Groovy">Groovy</name>
+          <unsorted>false</unsorted>
+          <category>Groovy</category>
+        </folders>
+        <!-- Manual Entry
+        <item rule="akways-enabled">
+          <name>com.jacobd.j1.groovy.wizard.CreateGroovyScriptWizard</name>
+          <id>com.jacobd.j1.groovy.wizard.CreateGroovyScriptWizard</id>
+          <description>Creates a new Groovy Script File</description>
+          <icon>${OracleIcons.LABEL}</icon>
+          <category>Groovy</category>
+          <folder>Groovy</folder>
+        </item>
+        -->
+        <item rule="context-has-project">
+          <name>com.jacobd.j1.groovy.wizard.CreateGroovyScriptWizard</name>
+          <name>com.jacobd.j1.groovy.wizard.CreateGroovyScriptWizard.id</name>
+          <description>Create a new Groovy Script</description>
+          <help>Creates a new Groovy Script</help>
+          <icon>${OracleIcons.LABEL}</icon>
+          <category>Groovy</category>
+          <folder>Groovy</folder>
+        </item>
+        <!-- Gallery wizard sets this incorrectly -->
+        <!--  
+          <item rule="always-enabled">
+          <name>com.jacobd.j1.groovy.nameWizard</name>
+          <description>name</description>
+          <help>description</help>
+          <category>category</category>
+          <folder>folder</folder>
+        </item>
+        -->
+      </gallery>
       <libraries xmlns="http://xmlns.oracle.com/jdeveloper/1013/jdev-libraries">
         <library name="Groovy 2.1.7" forceExtensionInitialization="false">
           <classpath></classpath>
@@ -25,7 +60,8 @@
   </trigger-hooks>
   <hooks>
     <feature-hook>
-      <description>Adds some basic groovy tooling in addition to the groovy installer extension
+      <description>Adds some basic groovy tooling in addition to the groovy installer extension</description>
       <optional>true</optional>
     </feature-hook>
+    </hooks>
 </extension>
