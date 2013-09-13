@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <ub:update-bundle version="1.0" xmlns="http://xmlns.oracle.com/jdeveloper/update"
                   xmlns:ub="http://xmlns.oracle.com/jdeveloper/updatebundle">
-  <ub:update id="com.jacobd.j1.updatecenter">
+  <update id="com.jacobd.j1.updatecenter">
     <name>Jacob's Update Center</name>
     <version>1.0.0</version>
     <category-id>General</category-id>
@@ -13,11 +13,11 @@
       <requires-extension id="oracle.jdeveloper"/>
       <!--<requires-agreement url=""/>-->
     </requirements>
-    <bundle-url>https://github.com/jacobdanner/JDevGithub_J1Ext/raw/master/UpdateCenter/deploy/updateCenterBundle.jar</bundle-url>
+    <bundle-url>https://github.com/jacobdanner/JDevGithub_J1Ext/raw/master/UpdateCenter/deploy/updateCenterBundle.zip</bundle-url>
 
     <!--
     <destination ></destination>
     <post-startup-hook ></post-startup-hook>
     -->
-  </ub:update>
+  </update>
 </ub:update-bundle>

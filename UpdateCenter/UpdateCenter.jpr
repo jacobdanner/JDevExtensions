@@ -250,7 +250,7 @@
                   </hash>
                </list>
             </hash>
-            <url n="jarURL" path="deploy/updateCenterBundle.jar"/>
+            <url n="jarURL" path="deploy/updateCenterBundle.zip"/>
             <value n="profileClass" v="oracle.jdeveloper.deploy.jar.ArchiveProfile"/>
             <value n="profileName" v="updateCenterBundle"/>
          </hash>
