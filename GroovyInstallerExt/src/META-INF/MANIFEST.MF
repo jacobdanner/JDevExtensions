@@ -1,0 +1,16 @@
+Bundle-ManifestVersion: 2.0
+Bundle-Version: 1.0.0
+Bundle-SymbolicName: com.jacobd.j1.groovy.installer
+Bundle-ClassPath: .
+Require-Bundle: oracle.ide,
+ oracle.ide.groovy,
+ oracle.ide.webbrowser,
+ oracle.ide.webupdate,
+ oracle.javatools,
+ oracle.javatools-nodeps,
+ oracle.jdeveloper.java.core,
+ oracle.webupdate-rt,
+ oracle.webupdate-rt-boot,
+ oracle.jewt-core,
+ oracle.jewt-jle,
+ oracle.javaxide

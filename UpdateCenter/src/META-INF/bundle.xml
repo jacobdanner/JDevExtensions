@@ -13,8 +13,10 @@
       <requires-extension id="oracle.jdeveloper"/>
       <!--<requires-agreement url=""/>-->
     </requirements>
+    <!--
+    Github provides RAW URL access to these sorts of items in the repository
     <bundle-url>https://github.com/jacobdanner/JDevGithub_J1Ext/raw/master/UpdateCenter/deploy/updateCenterBundle.zip</bundle-url>
-
+    --> 
     <!--
     <destination ></destination>
     <post-startup-hook ></post-startup-hook>

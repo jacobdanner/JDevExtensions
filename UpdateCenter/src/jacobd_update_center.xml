@@ -1,5 +1,52 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <upc:updates version="1.0" xmlns="http://xmlns.oracle.com/jdeveloper/update" xmlns:upc="http://xmlns.oracle.com/jdeveloper/updatecenter">
+   <upc:update id="com.jacobd.j1.groovy.installer">
+    <name>Groovy Installing Extension</name>
+    <version>1.0.0</version>
+    <category-id>Groovy</category-id>
+    <category>Groovy</category>
+    <author>Jacob Danner</author>
+    <author-url>https://github.com/jacobdanner</author-url>
+    <description>
+    Until its natively available, this extension installs Groovy 2.1.7 to the extension directory
+   </description>
+   <requirements>
+      <requires-extension id="oracle.jdeveloper"/>      
+      <requires-extension id="oracle.ide.webupdate"/>
+      <requires-extension id="oracle.ide.webbrowser"/>
+      <!--<requires-agreement url=""/> -->
+    </requirements>
+   <bundle-url>https://github.com/jacobdanner/JDevGithub_J1Ext/raw/master/GroovyInstallerExt/deploy/groovyInstallerBundle.zip</bundle-url>
+    <!--
+    <bundle-url></bundle-url>
+    
+    <destination>${oracle.home}</destination>
+    -->
+    <post-startup-hook>com.jacobd.j1.groovy.installer.GroovyInstaller</post-startup-hook>
+  </upc:update>
+   <upc:update id="com.jacobd.j1.updatecenter">
+    <name>Jacob's Update Center</name>
+    <version>1.0.0</version>
+    <category-id>General</category-id>
+    <category>General</category>
+    <author>Jacob Danner</author>
+    <author-url>https://github.com/jacobdanner</author-url>
+    <description>Adds Jacob's Update Center for to JDev for all sorts of goodness.</description>
+    <requirements >
+      <requires-extension id="oracle.jdeveloper"/>
+      <!--<requires-agreement url=""/>-->
+    </requirements>
+    <!--
+    Github provides RAW URL access to these sorts of items in the repository
+     --> 
+     <bundle-url>https://github.com/jacobdanner/JDevGithub_J1Ext/raw/master/UpdateCenter/deploy/updateCenterBundle.zip</bundle-url>
+   
+    <!--
+    <destination ></destination>
+    <post-startup-hook ></post-startup-hook>
+    -->
+  </upc:update>
+  <!--
   <upc:update id="">
     <name></name>
     <version></version>
@@ -41,4 +88,5 @@
     </requirements>
     <message></message>
   </upc:description>
+  -->
 </upc:updates>
