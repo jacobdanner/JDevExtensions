@@ -1,0 +1,25 @@
+<extension id="com.jacobd.j1.updatecenter" version="1.0.0"
+           esdk-version="2.0" rsbundle-class="com.jacobd.j1.updatecenter.UpdateCenterRes"
+           xmlns="http://jcp.org/jsr/198/extension-manifest">
+  <name>${EXTENSION_NAME}</name>
+  <owner>${EXTENSION_OWNER}</owner>
+  <trigger-hooks xmlns="http://xmlns.oracle.com/ide/extension">
+    <triggers/>
+  </trigger-hooks>
+  <hooks>
+    <feature-hook>
+      <description>Add Jacob's custom update center</description>
+      <optional>true</optional>
+    </feature-hook>
+
+    <!-- Step 1 - add an update center entry to an extension -->
+    <update-hook xmlns="http://xmlns.oracle.com/ide/update-hook">
+      <!-- Provide some unique id for your update center. This should never
+           change between releases. -->
+      <update-center id="com.jacobd.j1.updatecenter">
+        <name>Jacob Danner - J1 - Update Center</name>
+        <url>https://raw.github.com/jacobdanner/J1_Ext/master/UpdateCenter/src/jacobd_update_center.xml</url>
+      </update-center>
+    </update-hook>
+  </hooks>
+</extension>

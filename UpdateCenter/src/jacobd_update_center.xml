@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<upc:updates version="1.0" xmlns="http://xmlns.oracle.com/jdeveloper/update" xmlns:upc="http://xmlns.oracle.com/jdeveloper/updatecenter">
+  <upc:update id="">
+    <name></name>
+    <version></version>
+    <category-id></category-id>
+    <category></category>
+    <author></author>
+    <author-url></author-url>
+    <description></description>
+    <requirements>
+      <requires-extension id=""/>
+      <requires-agreement url=""/>
+    </requirements>
+    <bundle-url></bundle-url>
+    <destination></destination>
+    <post-startup-hook></post-startup-hook>
+  </upc:update>
+  <upc:bundle version="2.0">
+    <name></name>
+    <bundle-url></bundle-url>
+    <destination></destination>
+    <update id="">
+      <name></name>
+      <version></version>
+      <category-id></category-id>
+      <category></category>
+      <author></author>
+      <author-url></author-url>
+      <description></description>
+      <requirements/>
+      <bundle-url></bundle-url>
+      <destination></destination>
+      <post-startup-hook></post-startup-hook>
+    </update>
+  </upc:bundle>
+  <upc:description id="" title="">
+    <requirements>
+      <requires-extension id=""/>
+      <requires-agreement url=""/>
+    </requirements>
+    <message></message>
+  </upc:description>
+</upc:updates>

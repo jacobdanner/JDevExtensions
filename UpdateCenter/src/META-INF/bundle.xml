@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ub:update-bundle version="1.0" xmlns="http://xmlns.oracle.com/jdeveloper/update"
+                  xmlns:ub="http://xmlns.oracle.com/jdeveloper/updatebundle">
+  <ub:update id="com.jacobd.j1.updatecenter">
+    <name>Jacob's Update Center</name>
+    <version>1.0.0</version>
+    <category-id>General</category-id>
+    <category>General</category>
+    <author>Jacob Danner</author>
+    <author-url>https://github.com/jacobdanner</author-url>
+    <description>Adds Jacob's Update Center for to JDev for all sorts of goodness.</description>
+    <requirements >
+      <requires-extension id="oracle.jdeveloper"/>
+      <!--<requires-agreement url=""/>-->
+    </requirements>
+    <bundle-url>https://github.com/jacobdanner/JDevGithub_J1Ext/raw/master/UpdateCenter/deploy/updateCenterBundle.jar</bundle-url>
+
+    <!--
+    <destination ></destination>
+    <post-startup-hook ></post-startup-hook>
+    -->
+  </ub:update>
+</ub:update-bundle>
