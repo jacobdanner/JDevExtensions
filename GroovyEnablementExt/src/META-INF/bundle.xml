@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ub:update-bundle version="1.0" 
+  xmlns:ub="http://xmlns.oracle.com/jdeveloper/updatebundle"
+  xmlns="http://xmlns.oracle.com/jdeveloper/update">
+  <update id="com.jacobd.j1.groovy.enabler">
+    <name>Groovy Niceties Extension</name>
+    <version>1.0.0</version>
+    <category-id>Groovy</category-id>
+    <category>Groovy</category>
+    <author>Jacob Danner</author>
+    <author-url>https://github.com/jacobdanner/</author-url>
+    <description>
+    Until its natively available, this extension adds some groovy niceties to jdeveloper
+   </description>
+   <requirements>
+      <requires-extension id="oracle.jdeveloper"/>
+      <requires-extension id="com.jacobd.j1.groovy.installer"/>
+      <!--oracle.ide,
+ oracle.ide.groovy,
+ oracle.ide.webbrowser,
+ oracle.ide.webupdate,
+ oracle.javatools,
+ oracle.javatools-nodeps,
+ oracle.jdeveloper.java.core,
+ oracle.webupdate-rt,
+ oracle.webupdate-rt-boot,
+ oracle.jewt-core,
+ oracle.jewt-jle,
+ oracle.javaxide
+ -->
+      <!--<requires-agreement url=""/> -->
+    </requirements>
+    <!--
+    <bundle-url></bundle-url>
+    
+    <destination>${oracle.home}</destination>
+    -->
+  </update>
+</ub:update-bundle>

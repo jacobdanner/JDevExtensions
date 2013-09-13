@@ -1,0 +1,31 @@
+<extension id="com.jacobd.j1.groovy.enabler" version="1.0.0" esdk-version="2.0" rsbundle-class="com.jacobd.j1.groovy.EnablerRes"
+           xmlns="http://jcp.org/jsr/198/extension-manifest">
+  <name>${EXTENSION_NAME}</name>
+  <owner>${EXTENSION_OWNER}</owner>
+  <trigger-hooks xmlns="http://xmlns.oracle.com/ide/extension">
+   <triggers>
+     <externaltools xmlns="http://xmlns.oracle.com/ide/extension">
+        <macro macro="groovy.home"
+               name="JDev Groovy Home"
+               description="The Groovy Home installed by the com.jacob.j1.groovy.installer"
+               implClass="com.jacobd.j1.groovy.macro.GroovyHomeMacro" />
+     </externaltools>
+      <gallery xmlns="http://xmlns.oracle.com/jdeveloper/1013/extension"/>
+      <libraries xmlns="http://xmlns.oracle.com/jdeveloper/1013/jdev-libraries">
+        <library name="Groovy 2.1.7" forceExtensionInitialization="false">
+          <classpath></classpath>
+          <docpath></docpath>
+          <srcpath></srcpath>
+        </library>
+        <dynamic-library provider-class="abc" technology-keys="abc"/>
+      </libraries>
+    </triggers>
+   
+   
+  </trigger-hooks>
+  <hooks>
+    <feature-hook>
+      <description>Adds some basic groovy tooling in addition to the groovy installer extension
+      <optional>true</optional>
+    </feature-hook>
+</extension>
