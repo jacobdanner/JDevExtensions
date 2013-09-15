@@ -130,7 +130,7 @@ final class UnzipFileRunnable implements Runnable
             try {
               InputStream inStream = zip.getInputStream( entry );
               URLFileSystem.copy( inStream, URLFactory.newURL( outFile.getPath() ));
-              LOG.info( "Unzipped " + outFile );
+              LOG.finest( "Unzipped " + outFile );
               inStream.close();  
             }
             catch (IOException ioe) {      

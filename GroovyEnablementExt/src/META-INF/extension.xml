@@ -1,4 +1,5 @@
-<extension id="com.jacobd.j1.groovy.enabler" version="1.0.0" esdk-version="2.0" rsbundle-class="com.jacobd.j1.groovy.EnablerRes"
+<extension id="com.jacobd.j1.groovy.enabler" version="1.0.0" esdk-version="2.0" 
+  rsbundle-class="com.jacobd.j1.groovy.EnablerRes"
            xmlns="http://jcp.org/jsr/198/extension-manifest">
   <name>${EXTENSION_NAME}</name>
   <owner>${EXTENSION_OWNER}</owner>
@@ -27,8 +28,7 @@
         </item>
         -->
         <item rule="context-has-project">
-          <name>com.jacobd.j1.groovy.wizard.CreateGroovyScriptWizard</name>
-          <name>com.jacobd.j1.groovy.wizard.CreateGroovyScriptWizard.id</name>
+          <name>com.jacobd.j1.groovy.wizard.GroovyScriptBuilder</name>
           <description>Create a new Groovy Script</description>
           <help>Creates a new Groovy Script</help>
           <icon>${OracleIcons.LABEL}</icon>
@@ -47,12 +47,67 @@
         -->
       </gallery>
       <libraries xmlns="http://xmlns.oracle.com/jdeveloper/1013/jdev-libraries">
-        <library name="Groovy 2.1.7" forceExtensionInitialization="false">
-          <classpath></classpath>
-          <docpath></docpath>
-          <srcpath></srcpath>
+        <library name="${GROOVY_VERSION_LIBRARY_NAME}" forceExtensionInitialization="false">
+          <classpath>../../jdev/groovy/${GROOVY_VERSION_PATH}/lib/</classpath>
+          
+          
+          
+          <classpath>../../jdev/groovy/${GROOVY_VERSION_PATH}/lib/ant-1.8.4.jar</classpath>
+<classpath>../../jdev/groovy/${GROOVY_VERSION_PATH}/lib/ant-antlr-1.8.4.jar</classpath>
+<classpath>../../jdev/groovy/${GROOVY_VERSION_PATH}/lib/ant-junit-1.8.4.jar</classpath>
+<classpath>../../jdev/groovy/${GROOVY_VERSION_PATH}/lib/ant-launcher-1.8.4.jar</classpath>
+<classpath>../../jdev/groovy/${GROOVY_VERSION_PATH}/lib/antlr-2.7.7.jar</classpath>
+<classpath>../../jdev/groovy/${GROOVY_VERSION_PATH}/lib/asm-4.0.jar</classpath>
+<classpath>../../jdev/groovy/${GROOVY_VERSION_PATH}/lib/asm-analysis-4.0.jar</classpath>
+<classpath>../../jdev/groovy/${GROOVY_VERSION_PATH}/lib/asm-commons-4.0.jar</classpath>
+<classpath>../../jdev/groovy/${GROOVY_VERSION_PATH}/lib/asm-tree-4.0.jar</classpath>
+<classpath>../../jdev/groovy/${GROOVY_VERSION_PATH}/lib/asm-util-4.0.jar</classpath>
+<classpath>../../jdev/groovy/${GROOVY_VERSION_PATH}/lib/bsf-2.4.0.jar</classpath>
+<classpath>../../jdev/groovy/${GROOVY_VERSION_PATH}/lib/commons-cli-1.2.jar</classpath>
+<classpath>../../jdev/groovy/${GROOVY_VERSION_PATH}/lib/commons-logging-1.1.1.jar</classpath>
+<classpath>../../jdev/groovy/${GROOVY_VERSION_PATH}/lib/gpars-1.0.0.jar</classpath>
+<classpath>../../jdev/groovy/${GROOVY_VERSION_PATH}/lib/groovy-2.1.7.jar</classpath>
+<classpath>../../jdev/groovy/${GROOVY_VERSION_PATH}/lib/groovy-ant-2.1.7.jar</classpath>
+<classpath>../../jdev/groovy/${GROOVY_VERSION_PATH}/lib/groovy-bsf-2.1.7.jar</classpath>
+<classpath>../../jdev/groovy/${GROOVY_VERSION_PATH}/lib/groovy-console-2.1.7.jar</classpath>
+<classpath>../../jdev/groovy/${GROOVY_VERSION_PATH}/lib/groovy-docgenerator-2.1.7.jar</classpath>
+<classpath>../../jdev/groovy/${GROOVY_VERSION_PATH}/lib/groovy-groovydoc-2.1.7.jar</classpath>
+<classpath>../../jdev/groovy/${GROOVY_VERSION_PATH}/lib/groovy-groovysh-2.1.7.jar</classpath>
+<classpath>../../jdev/groovy/${GROOVY_VERSION_PATH}/lib/groovy-jmx-2.1.7.jar</classpath>
+<classpath>../../jdev/groovy/${GROOVY_VERSION_PATH}/lib/groovy-json-2.1.7.jar</classpath>
+<classpath>../../jdev/groovy/${GROOVY_VERSION_PATH}/lib/groovy-jsr223-2.1.7.jar</classpath>
+<classpath>../../jdev/groovy/${GROOVY_VERSION_PATH}/lib/groovy-servlet-2.1.7.jar</classpath>
+<classpath>../../jdev/groovy/${GROOVY_VERSION_PATH}/lib/groovy-sql-2.1.7.jar</classpath>
+<classpath>../../jdev/groovy/${GROOVY_VERSION_PATH}/lib/groovy-swing-2.1.7.jar</classpath>
+<classpath>../../jdev/groovy/${GROOVY_VERSION_PATH}/lib/groovy-templates-2.1.7.jar</classpath>
+<classpath>../../jdev/groovy/${GROOVY_VERSION_PATH}/lib/groovy-test-2.1.7.jar</classpath>
+<classpath>../../jdev/groovy/${GROOVY_VERSION_PATH}/lib/groovy-testng-2.1.7.jar</classpath>
+<classpath>../../jdev/groovy/${GROOVY_VERSION_PATH}/lib/groovy-xml-2.1.7.jar</classpath>
+<classpath>../../jdev/groovy/${GROOVY_VERSION_PATH}/lib/hamcrest-core-1.3.jar</classpath>
+<classpath>../../jdev/groovy/${GROOVY_VERSION_PATH}/lib/ivy-2.2.0.jar</classpath>
+<classpath>../../jdev/groovy/${GROOVY_VERSION_PATH}/lib/jansi-1.6.jar</classpath>
+<classpath>../../jdev/groovy/${GROOVY_VERSION_PATH}/lib/jcommander-1.27.jar</classpath>
+<classpath>../../jdev/groovy/${GROOVY_VERSION_PATH}/lib/jline-1.0.jar</classpath>
+<classpath>../../jdev/groovy/${GROOVY_VERSION_PATH}/lib/jsp-api-2.0.jar</classpath>
+<classpath>../../jdev/groovy/${GROOVY_VERSION_PATH}/lib/jsr166y-1.7.0.jar</classpath>
+<classpath>../../jdev/groovy/${GROOVY_VERSION_PATH}/lib/junit-4.11.jar</classpath>
+<classpath>../../jdev/groovy/${GROOVY_VERSION_PATH}/lib/qdox-1.12.1.jar</classpath>
+<classpath>../../jdev/groovy/${GROOVY_VERSION_PATH}/lib/servlet-api-2.4.jar</classpath>
+<classpath>../../jdev/groovy/${GROOVY_VERSION_PATH}/lib/testng-6.8.jar</classpath>
+<classpath>../../jdev/groovy/${GROOVY_VERSION_PATH}/lib/xmlpull-1.1.3.1.jar</classpath>
+
+<classpath>${jdev.groovy.home}/lib/xstream-1.4.2.jar</classpath>
+<!--<classpath>../../jdev/groovy/${GROOVY_VERSION_PATH}/lib/xstream-1.4.2.jar</classpath>-->
+          <docpath>../../jdev/groovy/${GROOVY_VERSION_PATH}/doc/html/api</docpath>
+          <docpath>../../jdev/groovy/${GROOVY_VERSION_PATH}/doc/html/gapi</docpath>
+          <docpath>../../jdev/groovy/${GROOVY_VERSION_PATH}/doc/html/groovy-jdk</docpath>
+          <srcpath>../../jdev/groovy/${GROOVY_VERSION_PATH}/src/src/main/</srcpath>
+          <!-- TODO: add all subprojects 
+          <srcpath>../../jdev/groovy/${GROOVY_VERSION_PATH}/src/src/main/</srcpath>
+          <srcpath>../../jdev/groovy/${GROOVY_VERSION_PATH}/src/src/main/</srcpath>
+          -->
         </library>
-        <dynamic-library provider-class="abc" technology-keys="abc"/>
+        <!--<dynamic-library provider-class="abc" technology-keys="abc"/>-->
       </libraries>
     </triggers>
    

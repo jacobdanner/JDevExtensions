@@ -6,7 +6,6 @@ import oracle.ide.Context;
 import oracle.ide.net.DefaultNameGenerator;
 import oracle.ide.net.NameGenerator;
 import oracle.jdeveloper.builder.file.FileBuilderModel;
-import oracle.jdevimpl.groovy.GroovyBundle;
 
 /**
  * @author jdanner
@@ -28,7 +27,7 @@ public class GroovyScriptBuilderModel extends FileBuilderModel
   public String getFileType()
   {
     // we can use this if we use
-    return GroovyBundle.get(GroovyBundle.GROOVY_SCRIPT_LABEL);
+    return GroovyEnablerBundle.get("GROOVY_SCRIPT_BUILDER_TITLE");
   }
 
   @Override
@@ -49,4 +48,6 @@ public class GroovyScriptBuilderModel extends FileBuilderModel
   {
     return GroovyNode.EXT;
   }
+  
+  
 }

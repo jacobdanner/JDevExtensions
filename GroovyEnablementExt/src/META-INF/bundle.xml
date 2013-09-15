@@ -13,22 +13,11 @@
     Until its natively available, this extension adds some groovy niceties to jdeveloper
    </description>
    <requirements>
-      <requires-extension id="oracle.jdeveloper"/>
-      <requires-extension id="com.jacobd.j1.groovy.installer"/>
-      <!--oracle.ide,
- oracle.ide.groovy,
- oracle.ide.webbrowser,
- oracle.ide.webupdate,
- oracle.javatools,
- oracle.javatools-nodeps,
- oracle.jdeveloper.java.core,
- oracle.webupdate-rt,
- oracle.webupdate-rt-boot,
- oracle.jewt-core,
- oracle.jewt-jle,
- oracle.javaxide
- -->
-      <!--<requires-agreement url=""/> -->
+      <requires-extension id="oracle.jdeveloper" />
+          <!-- minVersion="12.1.3.0.41.130909.2200"  -->
+      <requires-extension id="com.jacobd.j1.groovy.installer" />
+        <!-- minVersion="12.1.3.0.41.130909.2200"/> -->
+      
     </requirements>
     <!--
     <bundle-url></bundle-url>

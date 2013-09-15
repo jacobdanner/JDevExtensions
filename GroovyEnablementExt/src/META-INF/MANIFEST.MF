@@ -1,10 +1,8 @@
 Bundle-ManifestVersion: 2.0
 Bundle-Version: 1.0.0
-Bundle-SymbolicName: com.jacobd.j1.groovy
+Bundle-SymbolicName: com.jacobd.j1.groovy.enabler
 Bundle-ClassPath: .
 Require-Bundle: oracle.ide,
- oracle.external.groovy,
- oracle.ide.groovy,
  oracle.javatools,
  oracle.javatools-jdk,
  oracle.javatools-nodeps,
@@ -12,18 +10,10 @@ Require-Bundle: oracle.ide,
  oracle.jewt-core,
  oracle.jewt-jle,
  oracle.ide.externaltools,
- oracle.deploy.jdeveloper,
- oracle.deploy.jdeveloper.dt,
  oracle.jdeveloper,
- oracle.jdeveloper.build,
- oracle.jdeveloper.buildtools,
  oracle.jdeveloper.common,
- oracle.jdeveloper.extensiondt.core,
- oracle.jdeveloper.extensiondt.ui,
- oracle.jdeveloper.filetemplate,
- oracle.jdeveloper.filetemplate.java,
- oracle.jdeveloper.gotojava,
  oracle.jdeveloper.jgoodies,
- oracle.jdeveloper.json,
  oracle.idert,
- oracle.icons
+ oracle.icons,
+ oracle.ide.gallery,
+ oracle.ide.library

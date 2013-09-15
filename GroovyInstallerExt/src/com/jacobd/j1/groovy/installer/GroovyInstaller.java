@@ -12,7 +12,11 @@ import oracle.ide.webupdate.PostStartupHook;
 import oracle.javatools.dialogs.progress.DeterminateProgressMonitor;
 
 import java.io.*;
+
+import java.net.URISyntaxException;
 import java.net.URL;
+
+import java.util.Properties;
 import java.util.logging.Logger;
 
 public class GroovyInstaller implements PostStartupHook
@@ -35,24 +39,58 @@ public class GroovyInstaller implements PostStartupHook
 
       URL groovyDlUrl = URLFactory.newURL(GROOVY_DL_STRING);
       String prodHome = Ide.getProductHomeDirectory();
+      LOG.info("Product Home == "+prodHome); // should == jdeveloper/jdev
       File groovyDir = new File(prodHome, InstallerConstants.GROOVY_DIR);
       URL groovyDirUrl = URLFactory.newFileURL(groovyDir);
-      if (verifyDirectory(groovyDirUrl))
+      if (URLFileSystem.exists(groovyDirUrl) && verifyDirectory(groovyDirUrl) )
       {
         ExtensionRegistry.getExtensionRegistry().getLogger().warning("Unable to create " + groovyDir.getPath());
       }
 
       File destZip = new File(prodHome, "groovy-sdk-" + InstallerConstants.GROOVY_VERSION + ".zip");
+      
 
+      if(!URLFileSystem.exists(URLFactory.newFileURL(destZip)))
+      {
       LOG.info("About to Download from "+groovyDirUrl);
       ProxyOptions.getProxyOptions().doTask(new DownloadToFSRunnable(groovyDlUrl, destZip));
       LOG.info("Done downloading "+destZip.getPath());
-
+      }
       verifyDirectory(groovyDirUrl);
 
+      URL groovyUnzipDir = URLFactory.newDirURL(groovyDirUrl, InstallerConstants.GROOVY_DIR+"_"+InstallerConstants.GROOVY_VERSION);
+      LOG.info("GROOVY DIR == "+URLFileSystem.toDisplayString(groovyUnzipDir));
+      if(!URLFileSystem.exists(groovyUnzipDir))
+      {
       UnzipFileRunnable ufr = new UnzipFileRunnable(dpm, URLFactory.newFileURL(destZip), groovyDirUrl);
       ufr.run();
       LOG.info("Done installing Groovy "+InstallerConstants.GROOVY_VERSION);
+      }
+      
+      LOG.info("adding macro property file");
+      
+      URL oracleHomeURL = URLFactory.newDirURL(Ide.getOracleHomeDirectory());
+      //LOG.info("install dir == "+installDir); // should == jdeveloper
+      URL jdevGroovyProps = URLFactory.newURL(oracleHomeURL,"ide/macro/jdev.groovy.home.properties");
+      LOG.info("Using property file "+URLFileSystem.toDisplayString(jdevGroovyProps));
+      Properties prop = new Properties(); //Ide.getOracleHomeDirectory()
+      prop.setProperty("jdev.groovy.home", URLFileSystem.toRelativeSpec(oracleHomeURL, groovyUnzipDir));
+      prop.setProperty("jdev.groovy.version", InstallerConstants.GROOVY_VERSION);
+      try
+      {
+        prop.store(new FileWriter(new File(jdevGroovyProps.toURI()), false),
+                   "Created by plugin " + EXTENSION_ID + "\n");
+      }
+      catch (IOException e)
+      {
+        e.printStackTrace();
+        LOG.severe(e.getMessage());
+      }
+      catch (URISyntaxException e)
+      {
+        e.printStackTrace();
+        LOG.severe(e.getMessage());
+      }
 
     }
 

@@ -1,14 +1,20 @@
 package com.jacobd.j1.groovy.wizard;
 
 import com.jacobd.j1.groovy.GroovyEnablerBundle;
+
+import java.awt.Image;
+
+import javax.swing.Icon;
+
 import oracle.ide.Context;
+
+import oracle.javatools.icons.OracleIcons;
+
 import oracle.jdeveloper.builder.AbstractBuilderModel;
 import oracle.jdeveloper.builder.file.FileBuilder;
-import oracle.jdeveloper.builder.file.FileBuilderPanel;
 import oracle.jdeveloper.wizard.common.BaliWizardPanel;
 
 import oracle.jdeveloper.wizard.common.BaliWizardState;
-import oracle.jdevimpl.groovy.GroovyBundle;
 
 /**
  * @author jdanner
@@ -26,13 +32,15 @@ public class GroovyScriptBuilder extends FileBuilder
   @Override
   protected AbstractBuilderModel _buildModel(Context context)
   {
-    return new GroovyScriptBuilderModel(context);
+    GroovyScriptBuilderModel gsbm = new GroovyScriptBuilderModel(context);
+    return gsbm;
   }
 
   @Override
   protected BaliWizardPanel buildPanel(Context context, BaliWizardState state)
   {
-    return super.buildPanel(context, state);
+    BaliWizardPanel bwp =  super.buildPanel(context, state);
+    return bwp;
   }
 
   @Override
@@ -51,5 +59,18 @@ public class GroovyScriptBuilder extends FileBuilder
   protected String getDialogTitle()
   {
     return GroovyEnablerBundle.get("GROOVY_SCRIPT_BUILDER_LABEL");
+  }
+  
+
+  @Override
+  public Icon getIcon()
+  {
+    return GroovyEnablerBundle.getGroovyNodeIcon();//super.getIcon();
+  }
+
+  @Override
+  protected Image getHeaderImage()
+  {
+    return OracleIcons.toImage( GroovyEnablerBundle.getGroovyLogoIcon());// super.getHeaderImage();
   }
 }

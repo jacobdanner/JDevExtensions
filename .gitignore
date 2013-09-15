@@ -1,9 +1,9 @@
 .data
 */classes/*
 */.data/*
-
+.idea
 *.class
-
+*.iml
 # Package Files #
 *.war
 *.ear
