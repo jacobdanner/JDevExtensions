@@ -245,6 +245,36 @@
          </list>
       </hash>
    </hash>
+   <hash n="oracle.jdeveloper.runner.RunConfigurations">
+      <hash n="runConfigurationDefinitions">
+         <hash n="Remote">
+            <value n="allowInput" v="false"/>
+            <value n="clearLogBeforeRun" v="true"/>
+            <value n="compileBeforeRun" v="true"/>
+            <value n="custom" v="false"/>
+            <value n="javaOptions" v=""/>
+            <value n="logCommand" v="true"/>
+            <value n="logError" v="true"/>
+            <value n="logExit" v="true"/>
+            <value n="logOutput" v="true"/>
+            <value n="name" v="Remote"/>
+            <hash n="oracle.jdevimpl.runner.debug.DebugConfiguration">
+               <value n="tracingExclude" v="java;javax;sun;sunw;jdk;com.sun;apple;com.apple;com.evermind;com.oracle;com.orionserver;EDU.oswego;oracle.as;oracle.aurora;oracle.core;oracle.dms;oracle.gss;oracle.hooks;oracle.ide;oracle.ias;oracle.j2ee;oracle.jdbc;oracle.jdevimpl;oracle.jsp;oracle.oc4j;oracle.ojc;oracle.security;oracle.sql;oracle.webservices;oracle.xml;org.apache;org.omg;org.w3c;org.xml;weblogic;org.codehaus.groovy;groovy.lang;oracle.jbo.script.groovy"/>
+               <value n="tracingInclude" v=""/>
+            </hash>
+            <value n="programArguments" v=""/>
+            <value n="remoteDebuggingProfiling" v="false"/>
+            <value n="runActiveFile" v="true"/>
+            <value n="runAntBeforeRun" v="false"/>
+            <value n="runDirectoryURL"/>
+            <value n="targetURL"/>
+            <value n="VMName" v="server"/>
+         </hash>
+      </hash>
+      <list n="runConfigurationList">
+         <string v="Remote"/>
+      </list>
+   </hash>
    <hash n="oracle.jdevimpl.config.JProjectPaths">
       <url n="outputDirectory" path="classes/"/>
    </hash>

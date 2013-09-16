@@ -34,70 +34,153 @@ public class GroovyInstaller implements PostStartupHook
 
     if (ask.runDialog())
     {
-      DeterminateProgressMonitor dpm = new DeterminateProgressMonitor(Ide.getMainWindow(), "Installing Groovy "+InstallerConstants.GROOVY_VERSION);
+      DeterminateProgressMonitor dpm = new DeterminateProgressMonitor(Ide.getMainWindow(), "Installing Groovy " + InstallerConstants.GROOVY_VERSION);
       dpm.start();
+      dpm.setCancellable(true);
+      dpm.setCloseOnFinish(true);
+      dpm.setProgress(5);
+      URL groovyDlUrl = getGroovyDLURL();
+      String prodHome = getIdeProductHomeDirectory();
+      LOG.info("Product Home == " + prodHome); // should == jdeveloper/jdev
+      File groovyDir = getGroovyInstallDir(prodHome);
+      URL groovyDirUrl = getGroovyInstallDirUrl(prodHome);
+      File destZip = getGroovyZipDestFile(prodHome);
+      URL groovyUnzipDir = getGroovyUnzipDirectory(groovyDirUrl);
+      URL oracleHomeURL = getIdeOracleHomeDirectory();
+      URL jdevGroovyProps = getGroovyMacroPropertiesFile(oracleHomeURL);
 
-      URL groovyDlUrl = URLFactory.newURL(GROOVY_DL_STRING);
-      String prodHome = Ide.getProductHomeDirectory();
-      LOG.info("Product Home == "+prodHome); // should == jdeveloper/jdev
-      File groovyDir = new File(prodHome, InstallerConstants.GROOVY_DIR);
-      URL groovyDirUrl = URLFactory.newFileURL(groovyDir);
-      if (URLFileSystem.exists(groovyDirUrl) && verifyDirectory(groovyDirUrl) )
-      {
-        ExtensionRegistry.getExtensionRegistry().getLogger().warning("Unable to create " + groovyDir.getPath());
-      }
+      // make prerequisite directories
+      makePrequisiteDirectories(getGroovyInstallDirUrl(prodHome));
 
-      File destZip = new File(prodHome, "groovy-sdk-" + InstallerConstants.GROOVY_VERSION + ".zip");
-      
+      if (!URLFileSystem.exists(getGroovyZipDestUrl(prodHome)))
+      {
+        doDownloadtoFile(getGroovyDLURL(), getGroovyInstallDirUrl(prodHome), getGroovyZipDestFile(prodHome));
+        verifyDirectory(getGroovyDLURL());
+      }  else {
+        LOG.info("Groovy Zip "+ getGroovyZipDestUrl(prodHome)+" using that value");
+      }
+      dpm.incProgress();
 
-      if(!URLFileSystem.exists(URLFactory.newFileURL(destZip)))
+      if (!URLFileSystem.exists(getGroovyUnzipDirectory(groovyDirUrl)))
       {
-      LOG.info("About to Download from "+groovyDirUrl);
-      ProxyOptions.getProxyOptions().doTask(new DownloadToFSRunnable(groovyDlUrl, destZip));
-      LOG.info("Done downloading "+destZip.getPath());
-      }
-      verifyDirectory(groovyDirUrl);
-
-      URL groovyUnzipDir = URLFactory.newDirURL(groovyDirUrl, InstallerConstants.GROOVY_DIR+"_"+InstallerConstants.GROOVY_VERSION);
-      LOG.info("GROOVY DIR == "+URLFileSystem.toDisplayString(groovyUnzipDir));
-      if(!URLFileSystem.exists(groovyUnzipDir))
-      {
-      UnzipFileRunnable ufr = new UnzipFileRunnable(dpm, URLFactory.newFileURL(destZip), groovyDirUrl);
-      ufr.run();
-      LOG.info("Done installing Groovy "+InstallerConstants.GROOVY_VERSION);
-      }
-      
-      LOG.info("adding macro property file");
-      
-      URL oracleHomeURL = URLFactory.newDirURL(Ide.getOracleHomeDirectory());
-      //LOG.info("install dir == "+installDir); // should == jdeveloper
-      URL jdevGroovyProps = URLFactory.newURL(oracleHomeURL,"ide/macro/jdev.groovy.home.properties");
-      LOG.info("Using property file "+URLFileSystem.toDisplayString(jdevGroovyProps));
-      Properties prop = new Properties(); //Ide.getOracleHomeDirectory()
-      prop.setProperty("jdev.groovy.home", URLFileSystem.toRelativeSpec(oracleHomeURL, groovyUnzipDir));
-      prop.setProperty("jdev.groovy.version", InstallerConstants.GROOVY_VERSION);
-      try
-      {
-        prop.store(new FileWriter(new File(jdevGroovyProps.toURI()), false),
-                   "Created by plugin " + EXTENSION_ID + "\n");
-      }
-      catch (IOException e)
-      {
-        e.printStackTrace();
-        LOG.severe(e.getMessage());
-      }
-      catch (URISyntaxException e)
-      {
-        e.printStackTrace();
-        LOG.severe(e.getMessage());
+        LOG.info("GROOVY DIR == " + URLFileSystem.toDisplayString(getGroovyUnzipDirectory(groovyDirUrl)));
+        unzipFileToDir(dpm, getGroovyInstallDirUrl(prodHome), getGroovyZipDestFile(prodHome));
+      } else {
+        LOG.info("Groovy looks to be unzipped already at: "+ getGroovyUnzipDirectory(groovyDirUrl));
       }
 
+      dpm.incProgress();
+      if (!URLFileSystem.exists(jdevGroovyProps))
+      {
+        //LOG.info("install dir == "+installDir); // should == jdeveloper
+        createMacroPropertyFile(getGroovyUnzipDirectory(getGroovyInstallDirUrl(prodHome)),
+            getIdeOracleHomeDirectory(),
+            getGroovyMacroPropertiesFile(getIdeOracleHomeDirectory()));
+      }  else {
+        LOG.info("jdev macro properties already exists at: " +URLFileSystem.getPath(jdevGroovyProps));
+      }
+      dpm.incProgress();
+      dpm.finish();
     }
 
   }
 
+  private URL getGroovyMacroPropertiesFile(URL oracleHomeURL)
+  {
+    return URLFactory.newURL(oracleHomeURL, "ide/macros/jdev.groovy.home.properties");
+  }
 
+  private URL getIdeOracleHomeDirectory()
+  {
+    return URLFactory.newDirURL(Ide.getOracleHomeDirectory());
+  }
 
+  private URL getGroovyUnzipDirectory(URL groovyDirUrl)
+  {
+    return URLFactory.newDirURL(groovyDirUrl, InstallerConstants.GROOVY_DIR + "-" + InstallerConstants.GROOVY_VERSION);
+  }
+
+  private URL getGroovyZipDestUrl(String prodHome)
+  {
+    return URLFactory.newFileURL(getGroovyZipDestFile(prodHome));
+  }
+
+  private File getGroovyZipDestFile(String prodHome)
+  {
+    return new File(prodHome, "groovy-sdk-" + InstallerConstants.GROOVY_VERSION + ".zip");
+  }
+
+  private String getIdeProductHomeDirectory()
+  {
+    return Ide.getProductHomeDirectory();
+  }
+
+  private URL getGroovyInstallDirUrl(String prodHome)
+  {
+    return URLFactory.newFileURL(getGroovyInstallDir(prodHome));
+  }
+
+  private File getGroovyInstallDir(String prodHome)
+  {
+    return new File(prodHome, InstallerConstants.GROOVY_DIR);
+  }
+
+  private URL getGroovyDLURL()
+  {
+    return URLFactory.newURL(GROOVY_DL_STRING);
+  }
+
+  protected void makePrequisiteDirectories(URL groovyDirUrl)
+  {
+    if (!URLFileSystem.exists(groovyDirUrl))
+    {
+      if( verifyDirectory(groovyDirUrl))
+      {
+        ExtensionRegistry.getExtensionRegistry().getLogger().warning("Unable to create " + URLFileSystem.getPath(groovyDirUrl));
+      }
+    }
+  }
+
+  protected void createMacroPropertyFile(URL groovyUnzipDir, URL oracleHomeURL, URL propertyFile)
+  {
+    LOG.info("adding macro property file");
+    LOG.info("Using property file " + URLFileSystem.toDisplayString(propertyFile));
+    Properties prop = new Properties(); //Ide.getOracleHomeDirectory()
+    String relativePathToGroovy = URLFileSystem.toRelativeSpec(groovyUnzipDir, oracleHomeURL);
+    LOG.info("groovyDirPath == "+relativePathToGroovy);
+    prop.setProperty("jdev.groovy.home", "file\\:../../../../../"+relativePathToGroovy);
+    prop.setProperty("jdev.groovy.version", InstallerConstants.GROOVY_VERSION);
+    
+    
+    
+    try
+    {
+      prop.store(new FileWriter(new File(propertyFile.toURI()), false),
+          "Created by plugin " + EXTENSION_ID + "\n");
+    } catch (IOException e)
+    {
+      e.printStackTrace();
+      LOG.severe(e.getMessage());
+    } catch (URISyntaxException e)
+    {
+      e.printStackTrace();
+      LOG.severe(e.getMessage());
+    }
+  }
+
+  protected void unzipFileToDir(DeterminateProgressMonitor dpm, URL groovyDirUrl, File destZip)
+  {
+    UnzipFileRunnable ufr = new UnzipFileRunnable(dpm, URLFactory.newFileURL(destZip), groovyDirUrl);
+    ufr.run();
+    LOG.info("Done installing Groovy " + InstallerConstants.GROOVY_VERSION);
+  }
+
+  protected void doDownloadtoFile(URL groovyDlUrl, URL groovyDirUrl, File destZip)
+  {
+    LOG.info("About to Download from " + groovyDirUrl);
+    ProxyOptions.getProxyOptions().doTask(new DownloadToFSRunnable(groovyDlUrl, destZip));
+    LOG.info("Done downloading " + destZip.getPath());
+  }
 
 
   /**
@@ -106,7 +189,7 @@ public class GroovyInstaller implements PostStartupHook
    * @param extractDir the extract directory
    * @return true if we can extract, false otherwise.
    */
-  private boolean verifyDirectory(URL extractDir)
+  protected boolean verifyDirectory(URL extractDir)
   {
     if (URLFileSystem.exists(extractDir))
     {
@@ -116,7 +199,7 @@ public class GroovyInstaller implements PostStartupHook
       {
         if (!removeDirectory(extractDir))
         {
-          JEWTDialog overwriteFailed = JEWTDialog.createDialog(Ide.getMainWindow(), "Error removing files", JEWTDialog.BUTTON_OK );
+          JEWTDialog overwriteFailed = JEWTDialog.createDialog(Ide.getMainWindow(), "Error removing files", JEWTDialog.BUTTON_OK);
           overwriteFailed.runDialog();
 
           // We really want to uninstall the extension at this point, but
@@ -132,14 +215,12 @@ public class GroovyInstaller implements PostStartupHook
   }
 
 
-
-
   /**
    * Remove a directory recursively.
    *
    * @param url the URL of a directory.
    */
-  private boolean removeDirectory(URL url)
+  protected boolean removeDirectory(URL url)
   {
     URL[] files = URLFileSystem.list(url);
     for (int i = 0; i < files.length; i++)
