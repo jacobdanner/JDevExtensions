@@ -66,7 +66,7 @@ public class GroovyScriptBuilder extends FileBuilder
   @Override
   public Icon getIcon()
   {
-    return GroovyIcon.getNodeIcon();
+    return GroovyIcon.getFullNodeIcon();//GroovyIcon.getNodeIcon();
   }
 
   @Override
