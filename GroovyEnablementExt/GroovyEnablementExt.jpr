@@ -132,7 +132,7 @@
             <hash n="importDefinition">
                <hash n="rules"/>
             </hash>
-            <url n="jarURL" path="deploy/com.jacobd.j1.groovy.enabler.jar"/>
+            <url n="jarURL" path="deploy/com.jacobd.j1.groovy.enabler_11.jar"/>
             <value n="profileClass" v="oracle.jdevimpl.extensiondt.deploy.ExtensionProfile"/>
             <value n="profileName" v="edtExtensionProfile"/>
             <hash n="requireBundles">
@@ -182,6 +182,14 @@
                      <hash n="filters">
                         <list n="rules">
                            <hash>
+                              <value n="pattern" v="groovyEnablementBundler_11.zip"/>
+                              <value n="type" v="1"/>
+                           </hash>
+                           <hash>
+                              <value n="pattern" v="com.jacobd.j1.groovy.enabler.jar"/>
+                              <value n="type" v="1"/>
+                           </hash>
+                           <hash>
                               <value n="pattern" v="groovyEnablementBundle.zip"/>
                               <value n="type" v="1"/>
                            </hash>
@@ -224,7 +232,7 @@
                   </hash>
                </list>
             </hash>
-            <url n="jarURL" path="deploy/groovyEnablementBundler.zip"/>
+            <url n="jarURL" path="deploy/groovyEnablementBundler_11.zip"/>
             <value n="profileClass" v="oracle.jdeveloper.deploy.jar.ArchiveProfile"/>
             <value n="profileName" v="groovyEnablementBundler"/>
          </hash>

@@ -126,7 +126,7 @@
             <hash n="importDefinition">
                <hash n="rules"/>
             </hash>
-            <url n="jarURL" path="deploy/com.jacobd.j1.groovy.installer.jar"/>
+            <url n="jarURL" path="deploy/com.jacobd.j1.groovy.installer_11.jar"/>
             <value n="profileClass" v="oracle.jdevimpl.extensiondt.deploy.ExtensionProfile"/>
             <value n="profileName" v="edtExtensionProfile"/>
             <hash n="requireBundles">
@@ -209,6 +209,10 @@
                      <hash n="filters">
                         <list n="rules">
                            <hash>
+                              <value n="pattern" v="groovyInstallerBundle_11.zip"/>
+                              <value n="type" v="1"/>
+                           </hash>
+                           <hash>
                               <value n="pattern" v="META-INF/MANIFEST.MF"/>
                               <value n="type" v="1"/>
                            </hash>
@@ -230,7 +234,7 @@
                   </hash>
                </list>
             </hash>
-            <url n="jarURL" path="deploy/groovyInstallerBundle.zip"/>
+            <url n="jarURL" path="deploy/groovyInstallerBundle_11.zip"/>
             <value n="profileClass" v="oracle.jdeveloper.deploy.jar.ArchiveProfile"/>
             <value n="profileName" v="groovyInstallerBundle"/>
          </hash>

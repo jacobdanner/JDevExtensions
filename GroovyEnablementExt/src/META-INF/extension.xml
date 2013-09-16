@@ -91,9 +91,11 @@
             <node-type>com.jacobd.j1.groovy.GroovyNode</node-type>
           </document-info>
         </document-infos>
+        <!--
         <extension-to-content-type>
           <mapping extension=".groovy"/>
         </extension-to-content-type>
+        -->
         <url-recognizer>
           <file-extension>
             <extension>.groovy</extension>
