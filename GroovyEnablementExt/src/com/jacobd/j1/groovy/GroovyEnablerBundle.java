@@ -1,5 +1,6 @@
 package com.jacobd.j1.groovy;
 
+import com.jacobd.j1.groovy.icons.GroovyIcon;
 import oracle.ide.Ide;
 import oracle.ide.net.URLFactory;
 
@@ -49,12 +50,12 @@ public class GroovyEnablerBundle
 
   public static ImageIcon getGroovyNodeIcon()
   {
-    return getImageIcon(getGroovyNodeIconFile());
+    return GroovyIcon.getNodeIcon();// getImageIcon(getGroovyNodeIconFile());
   }
 
   public static ImageIcon getGroovyLogoIcon()
   {
-    return getImageIcon(getGroovyLogoIconFile());
+    return GroovyIcon.getLogoIcon(); //getImageIcon(getGroovyLogoIconFile());
   }
 
   private static ImageIcon getImageIcon(File f)
@@ -67,7 +68,7 @@ public class GroovyEnablerBundle
     return URLFactory.newFileURL(f);
   }
 
-  private static File getGroovyNodeIconFile()
+  /*private static File getGroovyNodeIconFile()
   {
     final String iconNodeText = get("GROOVY_ICN_NODE");
     File iconNodeFile = new File(Ide.getProductHomeDirectory(), iconNodeText);
@@ -80,7 +81,8 @@ public class GroovyEnablerBundle
     final String logoFileText = get("GROOVY_ICN_LOGO");
     File logoFile = new File(Ide.getProductHomeDirectory(), logoFileText);
     return logoFile;
-  }
+
+  } */
 
 
 }

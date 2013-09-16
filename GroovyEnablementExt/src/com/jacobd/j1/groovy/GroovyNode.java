@@ -1,5 +1,6 @@
 package com.jacobd.j1.groovy;
 
+import com.jacobd.j1.groovy.icons.GroovyIcon;
 import oracle.ide.model.TextNode;
 
 import javax.swing.*;
@@ -9,9 +10,7 @@ import javax.swing.*;
  */
 public class GroovyNode extends TextNode
 {
-  private static Icon largeIcon;
   public static final String EXT = ".groovy";
-
 
   public GroovyNode()
   {
@@ -24,12 +23,7 @@ public class GroovyNode extends TextNode
   @Override
   public Icon getIcon()
   {
-    if (largeIcon == null)
-    {
-      // groovy icon path from install
-      largeIcon = GroovyEnablerBundle.getGroovyNodeIcon();
-    }
-    return largeIcon;
+    return GroovyIcon.getNodeIcon();
   }
 
 

@@ -6,6 +6,7 @@ import java.awt.Image;
 
 import javax.swing.Icon;
 
+import com.jacobd.j1.groovy.icons.GroovyIcon;
 import oracle.ide.Context;
 
 import oracle.javatools.icons.OracleIcons;
@@ -65,12 +66,12 @@ public class GroovyScriptBuilder extends FileBuilder
   @Override
   public Icon getIcon()
   {
-    return GroovyEnablerBundle.getGroovyNodeIcon();//super.getIcon();
+    return GroovyIcon.getNodeIcon();
   }
 
   @Override
   protected Image getHeaderImage()
   {
-    return OracleIcons.toImage( GroovyEnablerBundle.getGroovyLogoIcon());// super.getHeaderImage();
+    return GroovyIcon.getFullNodeIcon().getImage();
   }
 }
