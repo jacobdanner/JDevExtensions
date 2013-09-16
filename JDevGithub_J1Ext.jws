@@ -28,4 +28,12 @@
       <hash><url n="URL" path="TestApp/TestApp.jpr"/></hash>
       <hash><url n="URL" path="UpdateCenter/UpdateCenter.jpr"/></hash>
    </list>
+   <hash n="oracle.jdeveloper.extensiondt.PlatformDefinitions">
+      <hash n="716e78d4199dda6445c92b69d8f84c71">
+         <url n="icon" path="../jdevjava11124/jdeveloper/configuration/../jdev/extensions/oracle.jdeveloper.jar" jar-entry="oracle/jdeveloper/icons/images/jdev_icon.gif"/>
+         <url n="installRoot" path="../jdevjava11124/jdeveloper/"/>
+         <value n="name" v="Oracle JDeveloper 11g Release 2 11.1.2.4.39.64.36.1"/>
+         <value n="productBootFile" v="jdev/bin/jdev.boot"/>
+      </hash>
+   </hash>
 </jws:workspace>

@@ -47,7 +47,7 @@
    <hash n="extensiondtProperties">
       <value n="extensiondt.deploymentdir" v="jdev/extensions/"/>
       <url n="extensiondt.manifest" path="src/META-INF/extension.xml"/>
-      <value n="extensiondt.platform" v="dt_jdev"/>
+      <value n="extensiondt.platform" v="716e78d4199dda6445c92b69d8f84c71"/>
    </hash>
    <hash n="oracle.ide.model.ResourcePaths">
       <hash n="resourcesContentSet">
@@ -68,6 +68,7 @@
    </hash>
    <hash n="oracle.jdeveloper.compiler.OjcConfiguration">
       <value n="internalEncoding" v="Cp1252"/>
+      <value n="target" v="1.5"/>
       <value n="webIANAEncoding" v="windows-1252"/>
    </hash>
    <hash n="oracle.jdeveloper.deploy.dt.DeploymentProfiles">
