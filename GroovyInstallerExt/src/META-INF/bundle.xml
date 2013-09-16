@@ -8,7 +8,7 @@
     <category-id>Groovy</category-id>
     <category>Groovy</category>
     <author>Jacob Danner</author>
-    <author-url></author-url>
+    <author-url>https://github.com/jacobdanner/JDevGithub_J1Ext</author-url>
     <description>
     Until its natively available, this extension installs Groovy 2.1.7 to the extension directory
    </description>
