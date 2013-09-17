@@ -2,7 +2,7 @@
 <upc:updates version="1.0" xmlns="http://xmlns.oracle.com/jdeveloper/update" 
 xmlns:upc="http://xmlns.oracle.com/jdeveloper/updatecenter">
    <!-- 11.x Groovy Installer Bundle -->
-   <upc:update id="com.jacobd.j1.groovy.installer">
+   <update id="com.jacobd.j1.groovy.installer">
     <name>Groovy Installing Extension</name>
     <version>11.1.1</version>
     <category-id>Groovy</category-id>
@@ -19,10 +19,10 @@ xmlns:upc="http://xmlns.oracle.com/jdeveloper/updatecenter">
     </requirements>
    <bundle-url>https://github.com/jacobdanner/JDevGithub_J1Ext/raw/11.x/GroovyInstallerExt/deploy/groovyInstallerBundle_11.zip</bundle-url>
     <post-startup-hook>com.jacobd.j1.groovy.installer.GroovyInstaller</post-startup-hook>
-  </upc:update>
+  </update>
    
    <!-- 12.x Groovy Installer Bundle -->
-   <upc:update id="com.jacobd.j1.groovy.installer">
+   <update id="com.jacobd.j1.groovy.installer">
     <name>Groovy Installing Extension</name>
     <version>1.0.0</version>
     <category-id>Groovy</category-id>
@@ -45,8 +45,8 @@ xmlns:upc="http://xmlns.oracle.com/jdeveloper/updatecenter">
     <destination>${oracle.home}</destination>
     -->
     <post-startup-hook>com.jacobd.j1.groovy.installer.GroovyInstaller</post-startup-hook>
-  </upc:update>
-   <upc:update id="com.jacobd.j1.updatecenter">
+  </update>
+   <update id="com.jacobd.j1.updatecenter">
     <name>Jacob's Update Center</name>
     <version>1.0.0</version>
     <category-id>General</category-id>
@@ -67,7 +67,7 @@ xmlns:upc="http://xmlns.oracle.com/jdeveloper/updatecenter">
     <destination ></destination>
     <post-startup-hook ></post-startup-hook>
     -->
-  </upc:update>
+  </update>
   <!--
   <upc:update id="">
     <name></name>
