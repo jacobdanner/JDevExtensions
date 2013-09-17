@@ -79,8 +79,9 @@
                   <url path="src/META-INF/MANIFEST.MF"/>
                </list>
                <value n="bundleManifestVersion" v="2.0.0"/>
+               <value n="bundleName" v="com.jacobd.j1.groovy.installer"/>
                <value n="bundleSymbolicName" v="com.jacobd.j1.groovy.installer"/>
-               <value n="bundleVersion" v="1.0.0"/>
+               <value n="bundleVersion" v="11.1.1"/>
                <value n="hasManifest" v="true"/>
             </hash>
             <hash n="exportDefinition">
@@ -113,6 +114,10 @@
                      <hash n="filters">
                         <list n="rules">
                            <hash>
+                              <value n="pattern" v="META-INF/bundle.xml"/>
+                              <value n="type" v="1"/>
+                           </hash>
+                           <hash>
                               <value n="pattern" v="**"/>
                               <value n="type" v="0"/>
                            </hash>
@@ -131,6 +136,9 @@
             <value n="profileName" v="edtExtensionProfile"/>
             <hash n="requireBundles">
                <list n="contributors">
+                  <hash>
+                     <value n="type" v="library-dependencies"/>
+                  </hash>
                   <hash>
                      <value n="type" v="profile-dependencies"/>
                   </hash>

@@ -4,7 +4,7 @@
   xmlns="http://xmlns.oracle.com/jdeveloper/update">
   <update id="com.jacobd.j1.groovy.installer">
     <name>Groovy Installing Extension</name>
-    <version>1.0.0</version>
+    <version>11.1.0</version>
     <category-id>Groovy</category-id>
     <category>Groovy</category>
     <author>Jacob Danner</author>
@@ -13,7 +13,7 @@
     Until its natively available, this extension installs Groovy 2.1.7 to the extension directory
    </description>
    <requirements>
-      <requires-extension id="oracle.jdeveloper"/>
+      <requires-extension id="oracle.jdeveloper" minVersion="11.1.2.4.0" maxVersion="12.1.1.0.0"/>
     <!--  oracle.ide,
  oracle.ide.groovy,
  oracle.ide.webbrowser,
@@ -27,13 +27,7 @@
  oracle.jewt-jle,
  oracle.javaxide
  -->
-      <!--<requires-agreement url=""/> -->
     </requirements>
-    <!--
-    <bundle-url></bundle-url>
-    
-    <destination>${oracle.home}</destination>
-    -->
     <post-startup-hook>com.jacobd.j1.groovy.installer.GroovyInstaller</post-startup-hook>
   </update>
 </ub:update-bundle>

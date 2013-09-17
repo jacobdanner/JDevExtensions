@@ -1,13 +1,26 @@
-<extension id="com.jacobd.j1.groovy.installer" version="1.0.0" esdk-version="2.0"
+<extension id="com.jacobd.j1.groovy.installer" version="11.1.1" 
+esdk-version="1.0"
            rsbundle-class="com.jacobd.j1.groovy.installer.InstallerRes"
            xmlns="http://jcp.org/jsr/198/extension-manifest">
   <name>${EXTENSION_NAME}</name>
   <owner>${EXTENSION_OWNER}</owner>
-  <trigger-hooks xmlns="http://xmlns.oracle.com/ide/extension">
-    <!-- TODO Declare triggering functionality provided by extension: com.jacobd.j1.groovy.installer -->
-    <triggers/>
-  </trigger-hooks>
+  <dependencies>
+    <import>oracle.ide</import>
+    <import>oracle.ide.webbrowser</import>
+    <import>oracle.ide.webupdate</import>
+    <import>oracle.jdeveloper.java.core</import>
+  </dependencies>
+  <required-bundles>
+    <bundle>oracle.javatools</bundle>
+    <bundle>oracle.javatools-jdk</bundle>
+    <bundle>oracle.javatools-nodeps</bundle>
+    <bundle>oracle.jewt-core</bundle>
+    <bundle>oracle.jewt-jle</bundle>
+    <bundle>oracle.javaxide</bundle>
+  </required-bundles>
+
   <hooks>
     <!-- TODO Declare functionality provided by extension: com.jacobd.j1.groovy.installer -->
+
   </hooks>
 </extension>

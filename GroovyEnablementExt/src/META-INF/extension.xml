@@ -1,9 +1,29 @@
-<extension id="com.jacobd.j1.groovy.enabler" version="1.0.0" esdk-version="2.0"
+<extension id="com.jacobd.j1.groovy.enabler" version="1.0.0" esdk-version="1.0"
            rsbundle-class="com.jacobd.j1.groovy.EnablerRes" xmlns="http://jcp.org/jsr/198/extension-manifest">
   <name>${EXTENSION_NAME}</name>
   <owner>${EXTENSION_OWNER}</owner>
-  <trigger-hooks xmlns="http://xmlns.oracle.com/ide/extension">
-    <triggers>
+  <dependencies>
+    <import>oracle.ide</import>
+    <import>oracle.ide.externaltools</import>
+    <import>oracle.ide.file</import>
+    <import>oracle.ide.files</import>
+    <import>oracle.ide.gallery</import>
+    <import>oracle.ide.library</import>
+    <import>oracle.jdeveloper</import>
+    <import>oracle.jdeveloper.common</import>
+    <import>oracle.jdeveloper.jgoodies</import>
+    <import>oracle.jdeveloper.java.core</import>
+  </dependencies>
+  <required-bundles>
+    <bundle>oracle.icons</bundle>
+    <bundle>oracle.idert</bundle>
+    <bundle>oracle.javatools</bundle>
+    <bundle>oracle.javatools-jdk</bundle>
+    <bundle>oracle.javatools-nodeps</bundle>
+    <bundle>oracle.jewt-core</bundle>
+    <bundle>oracle.jewt-jle</bundle>
+  </required-bundles>
+    <hooks>
       <externaltools xmlns="http://xmlns.oracle.com/ide/extension">
         <macro macro="groovy.home" name="JDev Groovy Home"
                description="The Groovy Home installed by the com.jacob.j1.groovy.installer"
@@ -91,11 +111,9 @@
             <node-type>com.jacobd.j1.groovy.GroovyNode</node-type>
           </document-info>
         </document-infos>
-        <!--
         <extension-to-content-type>
           <mapping extension=".groovy"/>
         </extension-to-content-type>
-        -->
         <url-recognizer>
           <file-extension>
             <extension>.groovy</extension>
@@ -104,9 +122,6 @@
         </url-recognizer>
       </node-recognizers-hook>
 
-    </triggers>
-  </trigger-hooks>
-  <hooks>
     <feature-hook>
       <description>Adds some basic groovy tooling in addition to the groovy installer extension</description>
       <optional>true</optional>
