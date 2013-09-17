@@ -1,5 +1,27 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<upc:updates version="1.0" xmlns="http://xmlns.oracle.com/jdeveloper/update" xmlns:upc="http://xmlns.oracle.com/jdeveloper/updatecenter">
+<upc:updates version="1.0" xmlns="http://xmlns.oracle.com/jdeveloper/update" 
+xmlns:upc="http://xmlns.oracle.com/jdeveloper/updatecenter">
+   <!-- 11.x Groovy Installer Bundle -->
+   <upc:update id="com.jacobd.j1.groovy.installer">
+    <name>Groovy Installing Extension</name>
+    <version>11.1.1</version>
+    <category-id>Groovy</category-id>
+    <category>Groovy</category>
+    <author>Jacob Danner</author>
+    <author-url>https://github.com/jacobdanner</author-url>
+    <description>
+    11.x Version - Until its natively available, this extension installs Groovy 2.1.7 to the extension directory
+   </description>
+   <requirements>
+      <requires-extension id="oracle.jdeveloper" minVersion="11.1.2.4.0" maxVersion="11.3.0.0.0"/>      
+      <requires-extension id="oracle.ide.webupdate" minVersion="11.1.2.4.0" maxVersion="11.3.0.0.0"/>
+      <requires-extension id="oracle.ide.webbrowser" minVersion="11.1.2.4.0" maxVersion="11.3.0.0.0"/>
+    </requirements>
+   <bundle-url>https://github.com/jacobdanner/JDevGithub_J1Ext/raw/11.x/GroovyInstallerExt/deploy/groovyInstallerBundle_11.zip</bundle-url>
+    <post-startup-hook>com.jacobd.j1.groovy.installer.GroovyInstaller</post-startup-hook>
+  </upc:update>
+   
+   <!-- 12.x Groovy Installer Bundle -->
    <upc:update id="com.jacobd.j1.groovy.installer">
     <name>Groovy Installing Extension</name>
     <version>1.0.0</version>
@@ -11,9 +33,9 @@
     Until its natively available, this extension installs Groovy 2.1.7 to the extension directory
    </description>
    <requirements>
-      <requires-extension id="oracle.jdeveloper"/>      
-      <requires-extension id="oracle.ide.webupdate"/>
-      <requires-extension id="oracle.ide.webbrowser"/>
+      <requires-extension id="oracle.jdeveloper" minVersion="12.1.0.0.0" maxVersion="12.4.0.0.0"/>      
+      <requires-extension id="oracle.ide.webupdate" minVersion="12.1.0.0.0" maxVersion="12.4.0.0.0"/>
+      <requires-extension id="oracle.ide.webbrowser" minVersion="12.1.0.0.0" maxVersion="12.4.0.0.0"/>
       <!--<requires-agreement url=""/> -->
     </requirements>
    <bundle-url>https://github.com/jacobdanner/JDevGithub_J1Ext/raw/master/GroovyInstallerExt/deploy/groovyInstallerBundle.zip</bundle-url>
