@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <upc:updates version="1.0" xmlns="http://xmlns.oracle.com/jdeveloper/update" xmlns:upc="http://xmlns.oracle.com/jdeveloper/updatecenter">
-   <upc:update id="com.jacobd.j1.groovy.installer">
+   <update id="com.jacobd.j1.groovy.installer">
     <name>Groovy Installing Extension</name>
     <version>1.0.0</version>
     <category-id>Groovy</category-id>
@@ -23,8 +23,8 @@
     <destination>${oracle.home}</destination>
     -->
     <post-startup-hook>com.jacobd.j1.groovy.installer.GroovyInstaller</post-startup-hook>
-  </upc:update>
-   <upc:update id="com.jacobd.j1.updatecenter">
+  </update>
+   <update id="com.jacobd.j1.updatecenter">
     <name>Jacob's Update Center</name>
     <version>1.0.0</version>
     <category-id>General</category-id>
@@ -45,7 +45,7 @@
     <destination ></destination>
     <post-startup-hook ></post-startup-hook>
     -->
-  </upc:update>
+  </update>
   <!--
   <upc:update id="">
     <name></name>

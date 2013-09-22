@@ -102,6 +102,14 @@
         </url-recognizer>
       </node-recognizers-hook>
 
+      <starter-factory-hook xmlns="http://xmlns.oracle.com/ide/extension/runner">
+        <starter-factory class="com.jacobd.j1.groovy.runner.GroovyStarterFactory"
+                         rule="always-enabled" target-class="com.jacobd.j1.groovy.GroovyNode"/>
+      </starter-factory-hook>
+      <singleton-provider-hook>
+        <singleton base-class="com.jacobd1.j1.groovy.GroovyManager"
+                   impl-class="com.jacobd.j1.groovy.GroovyManagerImpl"/>
+      </singleton-provider-hook>
     </triggers>
   </trigger-hooks>
   <hooks>
