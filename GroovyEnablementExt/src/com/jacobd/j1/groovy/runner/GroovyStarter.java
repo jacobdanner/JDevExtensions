@@ -1,15 +1,24 @@
 package com.jacobd.j1.groovy.runner;
 
+import com.jacobd.j1.groovy.GroovyEnablerBundle;
+import com.jacobd.j1.groovy.GroovyManager;
 import com.jacobd.j1.groovy.GroovyNode;
+import oracle.ide.Context;
 import oracle.ide.Ide;
-import oracle.ide.IdeConstants;
+import oracle.ide.externaltools.macro.MacroRegistry;
 import oracle.ide.log.LogPage;
+import oracle.ide.net.URLFactory;
 import oracle.ide.net.URLFileSystem;
+import oracle.ide.net.URLPath;
+import oracle.ideimpl.externaltools.macro.MacroRegistryImpl;
+import oracle.jdeveloper.library.JLibraryManager;
+import oracle.jdeveloper.library.Library;
 import oracle.jdeveloper.runner.JRunProcess;
 import oracle.jdeveloper.runner.JStarter;
 
 import java.io.File;
 import java.net.URISyntaxException;
+import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Logger;
@@ -29,6 +38,7 @@ public class GroovyStarter extends JStarter
   protected static final Logger LOG =
       Logger.getLogger(GroovyStarter.class.getName());
   protected GroovyNode node;
+  protected MacroRegistry macroRegistry = new MacroRegistryImpl();
 
   protected GroovyStarter(JRunProcess jrunProcess, GroovyNode node)
   {
@@ -36,22 +46,50 @@ public class GroovyStarter extends JStarter
     this.node = node;
   }
 
+  public void addGroovyJavaClasspath(List<String> list)
+  {
+    List cPathlist = new ArrayList<String>();
+
+    Library simpleGroovy = JLibraryManager.findLibrary(
+        GroovyEnablerBundle.get("GROOVY_VERSION_LIBRARY_NAME_SIMPLE"));
+    URLPath gClassPath = simpleGroovy.getClassPath();
+    List<URL> gClasspathUrls = gClassPath.asList();
+    LOG.info("GROOVY LIBRARY");
+    StringBuilder sb = new StringBuilder();
+    for (URL gC : gClasspathUrls)
+    {
+      LOG.info(URLFileSystem.getPlatformPathName(gC));
+      String jarPath  = URLFileSystem.getPath(gC);
+      //sb.append();
+      
+      String expandedPath = macroRegistry.expand(jarPath, Context.newIdeContext());
+      sb.append(expandedPath);
+
+      sb.append(File.pathSeparator);
+    }
+
+    String projectClasspath = getClassPath();
+    list.add("-classpath");
+    list.add(sb.toString()+projectClasspath);
+  }
+
   @Override
   public String[] getStartCommand()
   {
-    return super.getStartCommand();
     List list = new ArrayList();
     addJavaExecutableName(list);
-    addClassPathOption(list);
+    addGroovyJavaClasspath(list);
+    //addClassPathOption(list);
     addBootClassPathOption(list);
     addJavaOptions(list);
-    addGroovyOptions(list);
+    addGroovyExecOptions(list);
+    LOG.info("Going to Execute: "+list.toString());
     return (String[]) list.toArray(new String[list.size()]);
 
   }
 
 
-  private void addGroovyOptions(List list)
+  private void addGroovyExecOptions(List list)
   {
     // startGroovy runs the following:
     //  set STARTER_CLASSPATH=%GROOVY_HOME%\lib\groovy-2.0.5.jar
@@ -78,7 +116,7 @@ if exist "%USERPROFILE%/.groovy/postinit.bat" call "%USERPROFILE%/.groovy/postin
     list.add("-Dprogram.name=groovy");
     list.add("-Dgroovy.home="+getGroovyHome());
     list.add("org.codehaus.groovy.tools.GroovyStarter");
-    list.add("-Dgroovy.starter.conf="+getGroovyHome()+File.separator+"conf"+File.separator+"groovy-starter.conf");
+    list.add("-Dgroovy.starter.conf="+getGrooyStarterConf(getGroovyHome()));
 
 
     //groovy runs the following:
@@ -89,23 +127,15 @@ if exist "%USERPROFILE%/.groovy/postinit.bat" call "%USERPROFILE%/.groovy/postin
     list.add(node.getLongLabel());
   }
 
+  private String getGrooyStarterConf(String groovyHome)
+  {
+    URL starterConf =  URLFactory.newFileURL(getGroovyHome()+File.separator+"conf" + File.separator + "groovy-starter.conf");
+    return URLFileSystem.getPlatformPathName(starterConf);
+  }
+
   private String getGroovyHome()
   {
-
-
-  }
-
-
-  @Override
-  public boolean start()
-  {
-    return super.start();
-  }
-
-  @Override
-  protected String getClassPath()
-  {
-    return super.getClassPath();
+    return URLFileSystem.getPath(GroovyManager.getGroovyManager().getGroovyHome());
   }
 
   @Override

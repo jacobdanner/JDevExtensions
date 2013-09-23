@@ -45,3 +45,4 @@ public class GroovyStarterFactory extends AbstractStarterFactory
     }
     return starter;
   }
+}

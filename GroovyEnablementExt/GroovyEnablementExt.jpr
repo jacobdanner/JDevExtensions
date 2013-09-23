@@ -51,6 +51,17 @@
       <url n="extensiondt.manifest" path="src/META-INF/extension.xml"/>
       <value n="extensiondt.platform" v="dt_jdev"/>
    </hash>
+   <hash n="oracle.ide.model.DependencyConfiguration">
+      <list n="dependencyList">
+         <hash>
+            <hash n="dependable">
+               <url n="sourceOwnerURL" path="../JDevGithub_J1Ext.jws"/>
+               <url n="sourceURL" path="../GroovyInstallerExt/GroovyInstallerExt.jpr"/>
+            </hash>
+            <value n="recognizerId" v="oracle.jdeveloper.library"/>
+         </hash>
+      </list>
+   </hash>
    <hash n="oracle.ide.model.ResourcePaths">
       <hash n="resourcesContentSet">
          <list n="pattern-filters">

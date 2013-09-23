@@ -1,26 +1,40 @@
 package com.jacobd.j1.groovy;
 
 import com.jacobd.j1.groovy.installer.GroovyInstaller;
+import com.jacobd.j1.groovy.runner.GroovyRunProcess;
 import oracle.ide.Context;
 import oracle.ide.Ide;
 import oracle.ide.model.Node;
+import oracle.ide.model.NodeFactory;
 import oracle.ide.model.NodeUtil;
+import oracle.ide.net.URLFactory;
 import oracle.ide.net.URLFileSystem;
 import oracle.ide.runner.RunProcessListener;
 
+import java.io.File;
 import java.net.URL;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.logging.Logger;
 
 /**
  * @author jdanner
  */
 public class GroovyManagerImpl extends GroovyManager
 {
+  public static final Logger LOGGER = Logger.getLogger(GroovyManagerImpl.class.getName());
 
-  public  URL getGroovyHome()
+
+  public URL getGroovyHome()
   {
-    return GroovyInstaller.getGroovyInstallDirUrl(Ide.getProductHomeDirectory());
+    String jdevGroovyHome = Ide.getProperty("jdev.groovy.home");
+    LOGGER.info("jdev.groovy.home value == "+jdevGroovyHome);
+    URL made = URLFactory.newDirURL(Ide.getProductHomeDirectory()+ File.separator+jdevGroovyHome);
+
+    LOGGER.info("AbsPath == " + URLFileSystem.getPath(made)+" -- "+URLFileSystem.exists(made));
+    URL installDir = GroovyInstaller.getGroovyInstallDirUrl(Ide.getProductHomeDirectory());
+    LOGGER.info("installDir == "+URLFileSystem.getPlatformPathName(installDir));
+    return installDir;
   }
 
   public int runGroovy(Context context, URL groovyNodeUrl)
@@ -44,9 +58,10 @@ public class GroovyManagerImpl extends GroovyManager
   private int runGroovyImpl(Context context, URL groovyNodeUrl, boolean block)
   {
     final String name = URLFileSystem.getName(groovyNodeUrl);
-    final MavenRunProcess process = new MavenRunProcess(mavenConfig, context, name);
-    if (reloadBuffers)
+    final GroovyRunProcess process;
+    try
     {
+      process = new GroovyRunProcess(context, NodeFactory.findOrCreate(GroovyNode.class, groovyNodeUrl), name);
       final Map<Node, Long> timestampMap = new HashMap<Node, Long>();
       NodeUtil.storeAllTimestamps(timestampMap);
       process.setRunProcessListener(new RunProcessListener()
@@ -57,11 +72,10 @@ public class GroovyManagerImpl extends GroovyManager
           process.setRunProcessListener(null);
         }
       });
-    }
-    if (listener != null)
-    {
-      process.setMavenListener(listener);
-    }
+    //if (listener != null)
+    //{
+    //  process.setMavenListener(listener);
+    //}
     process.start();
     if (block)
     {
@@ -72,6 +86,15 @@ public class GroovyManagerImpl extends GroovyManager
       {
       }
     }
+
+    } catch (IllegalAccessException e)
+    {
+      e.printStackTrace();
+    } catch (InstantiationException e)
+    {
+      e.printStackTrace();
+    }
+
     return -1;
   }
 
