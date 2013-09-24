@@ -22,7 +22,6 @@
       <string v="oracle.jdeveloper.model.PathsConfiguration/ResourceBundlesContentSet"/>
    </list>
    <list n="listOfChildren">
-      <hash><url n="URL" path="GroovyConsoleExt/GroovyConsoleExt.jpr"/></hash>
       <hash><url n="URL" path="GroovyEnablementExt/GroovyEnablementExt.jpr"/></hash>
       <hash><url n="URL" path="GroovyInstallerExt/GroovyInstallerExt.jpr"/></hash>
       <hash><url n="URL" path="TestApp/TestApp.jpr"/></hash>

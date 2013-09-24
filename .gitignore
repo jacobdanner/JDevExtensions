@@ -5,6 +5,9 @@
 *.class
 *.iml
 */groovy/groovy-2.1.7/*
+GroovyConsoleExt/*
+out/*
+
 # Package Files #
 *.war
 *.ear
