@@ -48,19 +48,19 @@ public class GroovyStarter extends JStarter
 
   public void addGroovyJavaClasspath(List<String> list)
   {
-    List cPathlist = new ArrayList<String>();
-
     Library simpleGroovy = JLibraryManager.findLibrary(
         GroovyEnablerBundle.get("GROOVY_VERSION_LIBRARY_NAME_SIMPLE"));
+   
     URLPath gClassPath = simpleGroovy.getClassPath();
+   
     List<URL> gClasspathUrls = gClassPath.asList();
     LOG.info("GROOVY LIBRARY");
     StringBuilder sb = new StringBuilder();
+   
     for (URL gC : gClasspathUrls)
     {
       LOG.info(URLFileSystem.getPlatformPathName(gC));
       String jarPath  = URLFileSystem.getPath(gC);
-      //sb.append();
       
       String expandedPath = macroRegistry.expand(jarPath, Context.newIdeContext());
       sb.append(expandedPath);

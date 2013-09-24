@@ -1,78 +1,71 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<<<<<<< HEAD
-<upc:updates version="1.0" xmlns="http://xmlns.oracle.com/jdeveloper/update" 
-xmlns:upc="http://xmlns.oracle.com/jdeveloper/updatecenter">
-   <!-- 11.x Groovy Installer Bundle -->
-   <update id="com.jacobd.j1.groovy.installer">
+<upc:updates version="1.0" xmlns="http://xmlns.oracle.com/jdeveloper/update"
+             xmlns:upc="http://xmlns.oracle.com/jdeveloper/updatecenter">
+  <!-- 11.x Groovy Installer Bundle -->
+  <update id="com.jacobd.j1.groovy.installer">
     <name>Groovy Installing Extension</name>
     <version>11.1.1</version>
     <category-id>Groovy</category-id>
     <category>Groovy</category>
     <author>Jacob Danner</author>
     <author-url>https://github.com/jacobdanner</author-url>
-    <description>
-    11.x Version - Until its natively available, this extension installs Groovy 2.1.7 to the extension directory
-   </description>
-   <requirements>
-      <requires-extension id="oracle.jdeveloper" minVersion="11.1.2.4.0" maxVersion="11.3.0.0.0"/>      
+    <description>11.x Version - Until its natively available, this extension installs Groovy 2.1.7 to the extension
+                 directory</description>
+    <requirements>
+      <requires-extension id="oracle.jdeveloper" minVersion="11.1.2.4.0" maxVersion="11.3.0.0.0"/>
       <requires-extension id="oracle.ide.webupdate" minVersion="11.1.2.4.0" maxVersion="11.3.0.0.0"/>
       <requires-extension id="oracle.ide.webbrowser" minVersion="11.1.2.4.0" maxVersion="11.3.0.0.0"/>
     </requirements>
-   <bundle-url>https://github.com/jacobdanner/JDevGithub_J1Ext/raw/11.x/GroovyInstallerExt/deploy/groovyInstallerBundle_11.zip</bundle-url>
+    <bundle-url>https://github.com/jacobdanner/JDevGithub_J1Ext/raw/11.x/GroovyInstallerExt/deploy/groovyInstallerBundle_11.zip</bundle-url>
     <post-startup-hook>com.jacobd.j1.groovy.installer.GroovyInstaller</post-startup-hook>
   </update>
-   
-   <!-- 12.x Groovy Installer Bundle -->
-=======
-<upc:updates version="1.0" xmlns="http://xmlns.oracle.com/jdeveloper/update" xmlns:upc="http://xmlns.oracle.com/jdeveloper/updatecenter">
->>>>>>> consoleExt
-   <update id="com.jacobd.j1.groovy.installer">
-    <name>Groovy Installing Extension</name>
-    <version>1.0.0</version>
-    <category-id>Groovy</category-id>
-    <category>Groovy</category>
-    <author>Jacob Danner</author>
-    <author-url>https://github.com/jacobdanner</author-url>
-    <description>
-    Until its natively available, this extension installs Groovy 2.1.7 to the extension directory
-   </description>
-   <requirements>
-      <requires-extension id="oracle.jdeveloper" minVersion="12.1.0.0.0" maxVersion="12.4.0.0.0"/>      
-      <requires-extension id="oracle.ide.webupdate" minVersion="12.1.0.0.0" maxVersion="12.4.0.0.0"/>
-      <requires-extension id="oracle.ide.webbrowser" minVersion="12.1.0.0.0" maxVersion="12.4.0.0.0"/>
-      <!--<requires-agreement url=""/> -->
-    </requirements>
-   <bundle-url>https://github.com/jacobdanner/JDevGithub_J1Ext/raw/master/GroovyInstallerExt/deploy/groovyInstallerBundle.zip</bundle-url>
-    <!--
+  <!-- 12.x Groovy Installer Bundle -->
+  <upc:updates version="1.0" xmlns="http://xmlns.oracle.com/jdeveloper/update"
+               xmlns:upc="http://xmlns.oracle.com/jdeveloper/updatecenter">
+    <update id="com.jacobd.j1.groovy.installer">
+      <name>Groovy Installing Extension</name>
+      <version>1.0.0</version>
+      <category-id>Groovy</category-id>
+      <category>Groovy</category>
+      <author>Jacob Danner</author>
+      <author-url>https://github.com/jacobdanner</author-url>
+      <description>Until its natively available, this extension installs Groovy 2.1.7 to the extension directory</description>
+      <requirements>
+        <requires-extension id="oracle.jdeveloper" minVersion="12.1.0.0.0" maxVersion="12.4.0.0.0"/>
+        <requires-extension id="oracle.ide.webupdate" minVersion="12.1.0.0.0" maxVersion="12.4.0.0.0"/>
+        <requires-extension id="oracle.ide.webbrowser" minVersion="12.1.0.0.0" maxVersion="12.4.0.0.0"/>
+        <!--<requires-agreement url=""/> -->
+      </requirements>
+      <bundle-url>https://github.com/jacobdanner/JDevGithub_J1Ext/raw/master/GroovyInstallerExt/deploy/groovyInstallerBundle.zip</bundle-url>
+      <!--
     <bundle-url></bundle-url>
     
     <destination>${oracle.home}</destination>
     -->
-    <post-startup-hook>com.jacobd.j1.groovy.installer.GroovyInstaller</post-startup-hook>
-  </update>
-   <update id="com.jacobd.j1.updatecenter">
-    <name>Jacob's Update Center</name>
-    <version>1.0.0</version>
-    <category-id>General</category-id>
-    <category>General</category>
-    <author>Jacob Danner</author>
-    <author-url>https://github.com/jacobdanner</author-url>
-    <description>Adds Jacob's Update Center for to JDev for all sorts of goodness.</description>
-    <requirements >
-      <requires-extension id="oracle.jdeveloper"/>
-      <!--<requires-agreement url=""/>-->
-    </requirements>
-    <!--
+      <post-startup-hook>com.jacobd.j1.groovy.installer.GroovyInstaller</post-startup-hook>
+    </update>
+    <update id="com.jacobd.j1.updatecenter">
+      <name>Jacob's Update Center</name>
+      <version>1.0.0</version>
+      <category-id>General</category-id>
+      <category>General</category>
+      <author>Jacob Danner</author>
+      <author-url>https://github.com/jacobdanner</author-url>
+      <description>Adds Jacob's Update Center for to JDev for all sorts of goodness.</description>
+      <requirements>
+        <requires-extension id="oracle.jdeveloper"/>
+        <!--<requires-agreement url=""/>-->
+      </requirements>
+      <!--
     Github provides RAW URL access to these sorts of items in the repository
-     --> 
-     <bundle-url>https://github.com/jacobdanner/JDevGithub_J1Ext/raw/master/UpdateCenter/deploy/updateCenterBundle.zip</bundle-url>
-   
-    <!--
+     -->
+      <bundle-url>https://github.com/jacobdanner/JDevGithub_J1Ext/raw/master/UpdateCenter/deploy/updateCenterBundle.zip</bundle-url>
+      <!--
     <destination ></destination>
     <post-startup-hook ></post-startup-hook>
     -->
-  </update>
-  <!--
+    </update>
+    <!--
   <upc:update id="">
     <name></name>
     <version></version>
@@ -115,4 +108,5 @@ xmlns:upc="http://xmlns.oracle.com/jdeveloper/updatecenter">
     <message></message>
   </upc:description>
   -->
+  </upc:updates>
 </upc:updates>
