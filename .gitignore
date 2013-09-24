@@ -4,6 +4,7 @@
 .idea
 *.class
 *.iml
+*/groovy/groovy-2.1.7/*
 # Package Files #
 *.war
 *.ear
