@@ -27,7 +27,7 @@
       </gallery>
       <libraries xmlns="http://xmlns.oracle.com/jdeveloper/1013/jdev-libraries">
         <library name="${GROOVY_VERSION_LIBRARY_NAME_SIMPLE}">
-          <classpath>../groovy/groovy-2.1.7/lib/groovy-2.1.7.jar</classpath>
+          <classpath>../groovy/groovy-2.1.7/embeddable/groovy-all-2.1.7.jar</classpath>
           <!--<classpath>${jdev.groovy.home}/lib/groovy-2.1.7.jar</classpath>-->
         </library>
         <library name="${GROOVY_VERSION_LIBRARY_NAME}" forceExtensionInitialization="false">

@@ -142,7 +142,7 @@
             <hash n="importDefinition">
                <hash n="rules"/>
             </hash>
-            <url n="jarURL" path="deploy/com.jacobd.j1.groovy.enabler.jar"/>
+            <url n="jarURL" path="../../../../clean_jdev/jdeveloper/jdev/extensions/com.jacobd.j1.groovy.enabler.jar"/>
             <value n="profileClass" v="oracle.jdevimpl.extensiondt.deploy.ExtensionProfile"/>
             <value n="profileName" v="edtExtensionProfile"/>
             <hash n="requireBundles">
@@ -184,13 +184,21 @@
                   <hash>
                      <list n="contributors">
                         <hash>
-                           <url n="location" path="deploy/"/>
+                           <url n="location" path="../../../../clean_jdev/jdeveloper/jdev/extensions/"/>
                            <value n="type" v="1"/>
                         </hash>
                      </list>
                      <value n="displayName" v="extJar"/>
                      <hash n="filters">
                         <list n="rules">
+                           <hash>
+                              <value n="pattern" v="com.jacobd.j1.groovy.enabler.jar"/>
+                              <value n="type" v="0"/>
+                           </hash>
+                           <hash>
+                              <value n="pattern" v="**"/>
+                              <value n="type" v="1"/>
+                           </hash>
                            <hash>
                               <value n="pattern" v="groovyEnablementBundle.zip"/>
                               <value n="type" v="1"/>

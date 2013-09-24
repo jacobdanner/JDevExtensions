@@ -2,6 +2,7 @@ package com.jacobd.j1.groovy;
 
 import com.jacobd.j1.groovy.installer.GroovyInstaller;
 import com.jacobd.j1.groovy.runner.GroovyRunProcess;
+
 import oracle.ide.Context;
 import oracle.ide.Ide;
 import oracle.ide.model.Node;
@@ -12,7 +13,9 @@ import oracle.ide.net.URLFileSystem;
 import oracle.ide.runner.RunProcessListener;
 
 import java.io.File;
+
 import java.net.URL;
+
 import java.util.HashMap;
 import java.util.Map;
 import java.util.logging.Logger;
@@ -20,21 +23,23 @@ import java.util.logging.Logger;
 /**
  * @author jdanner
  */
-public class GroovyManagerImpl extends GroovyManager
+public class GroovyManagerImpl
+  extends GroovyManager
 {
   public static final Logger LOGGER = Logger.getLogger(GroovyManagerImpl.class.getName());
-
+  private static URL GROOVY_HOME;
 
   public URL getGroovyHome()
   {
-    String jdevGroovyHome = Ide.getProperty("jdev.groovy.home");
-    LOGGER.info("jdev.groovy.home value == "+jdevGroovyHome);
-    URL made = URLFactory.newDirURL(Ide.getProductHomeDirectory()+ File.separator+jdevGroovyHome);
-
-    LOGGER.info("AbsPath == " + URLFileSystem.getPath(made)+" -- "+URLFileSystem.exists(made));
-    URL installDir = GroovyInstaller.getGroovyInstallDirUrl(Ide.getProductHomeDirectory());
-    LOGGER.info("installDir == "+URLFileSystem.getPlatformPathName(installDir));
-    return installDir;
+    if (GROOVY_HOME == null)
+    {
+      URL installDir =
+        URLFactory.newDirURL(Ide.getProductHomeDirectory()+"/"+InstallerConstants.GROOVY_DIR + "/" + InstallerConstants.GROOVY_DIR + "-" +
+                             InstallerConstants.GROOVY_VERSION);
+      LOGGER.info("installDir == " + URLFileSystem.getPlatformPathName(installDir));
+      GROOVY_HOME = installDir;
+    }
+    return GROOVY_HOME;
   }
 
   public int runGroovy(Context context, URL groovyNodeUrl)
@@ -72,25 +77,28 @@ public class GroovyManagerImpl extends GroovyManager
           process.setRunProcessListener(null);
         }
       });
-    //if (listener != null)
-    //{
-    //  process.setMavenListener(listener);
-    //}
-    process.start();
-    if (block)
-    {
-      try
+      //if (listener != null)
+      //{
+      //  process.setMavenListener(listener);
+      //}
+      process.start();
+      if (block)
       {
-        return process.waitUntilFinished();
-      } catch (InterruptedException ie)
-      {
+        try
+        {
+          return process.waitUntilFinished();
+        }
+        catch (InterruptedException ie)
+        {
+        }
       }
-    }
 
-    } catch (IllegalAccessException e)
+    }
+    catch (IllegalAccessException e)
     {
       e.printStackTrace();
-    } catch (InstantiationException e)
+    }
+    catch (InstantiationException e)
     {
       e.printStackTrace();
     }
