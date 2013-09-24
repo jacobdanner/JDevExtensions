@@ -1,0 +1,68 @@
+set GROOVY_OPTS="-Xmx512m"
+set GROOVY_OPTS=%GROOVY_OPTS% -Dprogram.name="%PROGNAME%"
+set GROOVY_OPTS=%GROOVY_OPTS% -Dgroovy.home="%GROOVY_HOME%"
+if not "%TOOLS_JAR%" == "" set GROOVY_OPTS=%GROOVY_OPTS% -Dtools.jar="%TOOLS_JAR%"
+set GROOVY_OPTS=%GROOVY_OPTS% -Dgroovy.starter.conf="%STARTER_CONF%"
+set GROOVY_OPTS=%GROOVY_OPTS% -Dscript.name="%GROOVY_SCRIPT_NAME%"
+
+
+
+if exist "%USERPROFILE%/.groovy/postinit.bat" call "%USERPROFILE%/.groovy/postinit.bat"
+
+@rem Execute Groovy
+echo "%JAVA_EXE%" %GROOVY_OPTS% %JAVA_OPTS% -classpath "%STARTER_CLASSPATH%" %STARTER_MAIN_CLASS% --main %CLASS% --conf "%STARTER_CONF%" --classpath "%CP%" %CMD_LINE_ARGS%
+
+"%JAVA_EXE%" %GROOVY_OPTS% %JAVA_OPTS% -classpath "%STARTER_CLASSPATH%" %STARTER_MAIN_CLASS% --main %CLASS% --conf "%STARTER_CONF%" --classpath "%CP%" %CMD_LINE_ARGS%
+
+
+
+"D:\lang\jdk1.7.0_25\bin\java.exe" "-Xmx512m" 
+-Dprogram.name="B2" 
+-Dgroovy.home="D:\lang\groovy\groovy-2.0.5" 
+-Dtools.jar="D:\lang\jdk1.7.0_25\lib\tools.jar" 
+-Dgroovy.starter.conf="D:\lang\groovy\groovy-2.0.5\conf\groovy-starter.conf" 
+-Dscript.name="D:\o\jdevadf\build\bootstrap\src\groovy\BundleInstaller.groovy" 
+-Dhttp.proxyHost=www-proxy.us.oracle.com -Dhttp.proxyPort=80 
+-classpath "D:\lang\groovy\groovy-2.0.5\lib\groovy-2.0.5.jar" 
+org.codehaus.groovy.tools.GroovyStarter 
+--main groovy.ui.Console 
+--conf "D:\lang\groovy\groovy-2.0.5\conf\groovy-starter.conf" 
+--classpath "."  
+D:\o\jdevadf\build\bootstrap\src\groovy\BundleInstaller.groovy
+
+
+
+<hash n="oracle.ideimpl.externaltools.ExternalToolList">
+      <list n="external-tools">
+         <hash>
+            <hash n="properties">
+               <value n="arguments" v="&quot;${file.dir}&quot;"/>
+               <value n="availability" v="1"/>
+               <value n="caption" v="Explore Directory"/>
+               <value n="executable" v="C:\windows\explorer.exe"/>
+               <url n="iconURL" protocol="ide.fileicon.file" path="/C:/windows/explorer.exe"/>
+               <value n="integrationMask" v="15"/>
+               <value n="logOutput" v="false"/>
+               <value n="saveBeforeRun" v="true"/>
+               <value n="scannerTag" v="a.Explore Directory"/>
+            </hash>
+            <value n="type" v="oracle.ideimpl.externaltools.program.ExternalProgramType"/>
+         </hash>
+         <hash>
+            <hash n="properties">
+               <value n="arguments" v="-cp ${project.classpath} ${file.path}"/>
+               <value n="availability" v="3"/>
+               <list n="availableTypes">
+                  <string v="oracle.jdevimpl.groovy.model.GroovyNode"/>
+               </list>
+               <value n="caption" v="Groovyconsole"/>
+               <value n="executable" v="D:\lang\groovy\groovy-2.0.5\bin\groovyConsole.bat"/>
+               <url n="iconURL" path="../../jdev/extensions/oracle.ide.groovy.jar" jar-entry="oracle/jdevimpl/groovy/groovy_icon.png"/>
+               <value n="integrationMask" v="7"/>
+               <value n="runDirectory" v="${file.dir}"/>
+               <value n="toolTipText"/>
+            </hash>
+            <value n="type" v="oracle.ideimpl.externaltools.program.ExternalProgramType"/>
+         </hash>
+      </list>
+   </hash>

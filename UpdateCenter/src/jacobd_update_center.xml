@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
+<<<<<<< HEAD
 <upc:updates version="1.0" xmlns="http://xmlns.oracle.com/jdeveloper/update" 
 xmlns:upc="http://xmlns.oracle.com/jdeveloper/updatecenter">
    <!-- 11.x Groovy Installer Bundle -->
@@ -22,6 +23,9 @@ xmlns:upc="http://xmlns.oracle.com/jdeveloper/updatecenter">
   </update>
    
    <!-- 12.x Groovy Installer Bundle -->
+=======
+<upc:updates version="1.0" xmlns="http://xmlns.oracle.com/jdeveloper/update" xmlns:upc="http://xmlns.oracle.com/jdeveloper/updatecenter">
+>>>>>>> consoleExt
    <update id="com.jacobd.j1.groovy.installer">
     <name>Groovy Installing Extension</name>
     <version>1.0.0</version>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<updates version="1.0" xmlns="http://xmlns.oracle.com/jdeveloper/updatecenter">
+  <update id="" xmlns="http://xmlns.oracle.com/jdeveloper/update">
+    <name></name>
+    <version></version>
+    <category-id></category-id>
+    <category></category>
+    <author></author>
+    <author-url></author-url>
+    <description></description>
+    <requirements>
+      <requires-extension id=""/>
+      <requires-agreement url=""/>
+    </requirements>
+    <bundle-url></bundle-url>
+    <destination></destination>
+    <post-startup-hook></post-startup-hook>
+  </update>
+</updates>

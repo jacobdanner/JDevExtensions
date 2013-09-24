@@ -115,12 +115,12 @@ public class GroovyInstaller implements PostStartupHook
     return Ide.getProductHomeDirectory();
   }
 
-  private URL getGroovyInstallDirUrl(String prodHome)
+  public static URL getGroovyInstallDirUrl(String prodHome)
   {
     return URLFactory.newFileURL(getGroovyInstallDir(prodHome));
   }
 
-  private File getGroovyInstallDir(String prodHome)
+  public static File getGroovyInstallDir(String prodHome)
   {
     return new File(prodHome, InstallerConstants.GROOVY_DIR);
   }

@@ -1,0 +1,10 @@
+Bundle-ManifestVersion: 2.0
+Bundle-Version: 1.0.0
+Bundle-SymbolicName: com.jacobd.j1.groovy.console
+Bundle-ClassPath: .
+Require-Bundle: oracle.ide,
+ oracle.ide.externaltools,
+ oracle.javatools,
+ oracle.javatools-nodeps,
+ oracle.javaxide,
+ oracle.jdeveloper.java.core

@@ -26,58 +26,62 @@
 
       </gallery>
       <libraries xmlns="http://xmlns.oracle.com/jdeveloper/1013/jdev-libraries">
+        <library name="${GROOVY_VERSION_LIBRARY_NAME_SIMPLE}">
+          <classpath>../groovy/groovy-2.1.7/lib/groovy-2.1.7.jar</classpath>
+          <!--<classpath>${jdev.groovy.home}/lib/groovy-2.1.7.jar</classpath>-->
+        </library>
         <library name="${GROOVY_VERSION_LIBRARY_NAME}" forceExtensionInitialization="false">
           <!--<classpath>${jdev.groovy.home}/lib/</classpath>-->
-          <classpath>${jdev.groovy.home}/lib/ant-1.8.4.jar</classpath>
-          <classpath>${jdev.groovy.home}/lib/ant-antlr-1.8.4.jar</classpath>
-          <classpath>${jdev.groovy.home}/lib/ant-junit-1.8.4.jar</classpath>
-          <classpath>${jdev.groovy.home}/lib/ant-launcher-1.8.4.jar</classpath>
-          <classpath>${jdev.groovy.home}/lib/antlr-2.7.7.jar</classpath>
-          <classpath>${jdev.groovy.home}/lib/asm-4.0.jar</classpath>
-          <classpath>${jdev.groovy.home}/lib/asm-analysis-4.0.jar</classpath>
-          <classpath>${jdev.groovy.home}/lib/asm-commons-4.0.jar</classpath>
-          <classpath>${jdev.groovy.home}/lib/asm-tree-4.0.jar</classpath>
-          <classpath>${jdev.groovy.home}/lib/asm-util-4.0.jar</classpath>
-          <classpath>${jdev.groovy.home}/lib/bsf-2.4.0.jar</classpath>
-          <classpath>${jdev.groovy.home}/lib/commons-cli-1.2.jar</classpath>
-          <classpath>${jdev.groovy.home}/lib/commons-logging-1.1.1.jar</classpath>
-          <classpath>${jdev.groovy.home}/lib/gpars-1.0.0.jar</classpath>
-          <classpath>${jdev.groovy.home}/lib/groovy-${jdev.groovy.version}.jar</classpath>
-          <classpath>${jdev.groovy.home}/lib/groovy-ant-${jdev.groovy.version}.jar</classpath>
-          <classpath>${jdev.groovy.home}/lib/groovy-bsf-${jdev.groovy.version}.jar</classpath>
-          <classpath>${jdev.groovy.home}/lib/groovy-console-${jdev.groovy.version}.jar</classpath>
-          <classpath>${jdev.groovy.home}/lib/groovy-docgenerator-${jdev.groovy.version}.jar</classpath>
-          <classpath>${jdev.groovy.home}/lib/groovy-groovydoc-${jdev.groovy.version}.jar</classpath>
-          <classpath>${jdev.groovy.home}/lib/groovy-groovysh-${jdev.groovy.version}.jar</classpath>
-          <classpath>${jdev.groovy.home}/lib/groovy-jmx-${jdev.groovy.version}.jar</classpath>
-          <classpath>${jdev.groovy.home}/lib/groovy-json-${jdev.groovy.version}.jar</classpath>
-          <classpath>${jdev.groovy.home}/lib/groovy-jsr223-${jdev.groovy.version}.jar</classpath>
-          <classpath>${jdev.groovy.home}/lib/groovy-servlet-${jdev.groovy.version}.jar</classpath>
-          <classpath>${jdev.groovy.home}/lib/groovy-sql-${jdev.groovy.version}.jar</classpath>
-          <classpath>${jdev.groovy.home}/lib/groovy-swing-${jdev.groovy.version}.jar</classpath>
-          <classpath>${jdev.groovy.home}/lib/groovy-templates-${jdev.groovy.version}.jar</classpath>
-          <classpath>${jdev.groovy.home}/lib/groovy-test-${jdev.groovy.version}.jar</classpath>
-          <classpath>${jdev.groovy.home}/lib/groovy-testng-${jdev.groovy.version}.jar</classpath>
-          <classpath>${jdev.groovy.home}/lib/groovy-xml-${jdev.groovy.version}.jar</classpath>
-          <classpath>${jdev.groovy.home}/lib/hamcrest-core-1.3.jar</classpath>
-          <classpath>${jdev.groovy.home}/lib/ivy-2.2.0.jar</classpath>
-          <classpath>${jdev.groovy.home}/lib/jansi-1.6.jar</classpath>
-          <classpath>${jdev.groovy.home}/lib/jcommander-1.27.jar</classpath>
-          <classpath>${jdev.groovy.home}/lib/jline-1.0.jar</classpath>
-          <classpath>${jdev.groovy.home}/lib/jsp-api-2.0.jar</classpath>
-          <classpath>${jdev.groovy.home}/lib/jsr166y-1.7.0.jar</classpath>
-          <classpath>${jdev.groovy.home}/lib/junit-4.11.jar</classpath>
-          <classpath>${jdev.groovy.home}/lib/qdox-1.12.1.jar</classpath>
-          <classpath>${jdev.groovy.home}/lib/servlet-api-2.4.jar</classpath>
-          <classpath>${jdev.groovy.home}/lib/testng-6.8.jar</classpath>
-          <classpath>${jdev.groovy.home}/lib/xmlpull-1.1.3.1.jar</classpath>
-          <classpath>${jdev.groovy.home}/lib/xstream-1.4.2.jar</classpath>
-          <docpath>${jdev.groovy.home}/doc/html/api</docpath>
-          <docpath>${jdev.groovy.home}/doc/html/gapi</docpath>
-          <docpath>${jdev.groovy.home}/doc/html/groovy-jdk</docpath>
-          <srcpath>${jdev.groovy.home}/src/src/main/</srcpath>
+          <classpath>../groovy/groovy-2.1.7/lib/ant-1.8.4.jar</classpath>
+          <classpath>../groovy/groovy-2.1.7/lib/ant-antlr-1.8.4.jar</classpath>
+          <classpath>../groovy/groovy-2.1.7/lib/ant-junit-1.8.4.jar</classpath>
+          <classpath>../groovy/groovy-2.1.7/lib/ant-launcher-1.8.4.jar</classpath>
+          <classpath>../groovy/groovy-2.1.7/lib/antlr-2.7.7.jar</classpath>
+          <classpath>../groovy/groovy-2.1.7/lib/asm-4.0.jar</classpath>
+          <classpath>../groovy/groovy-2.1.7/lib/asm-analysis-4.0.jar</classpath>
+          <classpath>../groovy/groovy-2.1.7/lib/asm-commons-4.0.jar</classpath>
+          <classpath>../groovy/groovy-2.1.7/lib/asm-tree-4.0.jar</classpath>
+          <classpath>../groovy/groovy-2.1.7/lib/asm-util-4.0.jar</classpath>
+          <classpath>../groovy/groovy-2.1.7/lib/bsf-2.4.0.jar</classpath>
+          <classpath>../groovy/groovy-2.1.7/lib/commons-cli-1.2.jar</classpath>
+          <classpath>../groovy/groovy-2.1.7/lib/commons-logging-1.1.1.jar</classpath>
+          <classpath>../groovy/groovy-2.1.7/lib/gpars-1.0.0.jar</classpath>
+          <classpath>../groovy/groovy-2.1.7/lib/groovy-2.1.7.jar</classpath>
+          <classpath>../groovy/groovy-2.1.7/lib/groovy-ant-2.1.7.jar</classpath>
+          <classpath>../groovy/groovy-2.1.7/lib/groovy-bsf-2.1.7.jar</classpath>
+          <classpath>../groovy/groovy-2.1.7/lib/groovy-console-2.1.7.jar</classpath>
+          <classpath>../groovy/groovy-2.1.7/lib/groovy-docgenerator-2.1.7.jar</classpath>
+          <classpath>../groovy/groovy-2.1.7/lib/groovy-groovydoc-2.1.7.jar</classpath>
+          <classpath>../groovy/groovy-2.1.7/lib/groovy-groovysh-2.1.7.jar</classpath>
+          <classpath>../groovy/groovy-2.1.7/lib/groovy-jmx-2.1.7.jar</classpath>
+          <classpath>../groovy/groovy-2.1.7/lib/groovy-json-2.1.7.jar</classpath>
+          <classpath>../groovy/groovy-2.1.7/lib/groovy-jsr223-2.1.7.jar</classpath>
+          <classpath>../groovy/groovy-2.1.7/lib/groovy-servlet-2.1.7.jar</classpath>
+          <classpath>../groovy/groovy-2.1.7/lib/groovy-sql-2.1.7.jar</classpath>
+          <classpath>../groovy/groovy-2.1.7/lib/groovy-swing-2.1.7.jar</classpath>
+          <classpath>../groovy/groovy-2.1.7/lib/groovy-templates-2.1.7.jar</classpath>
+          <classpath>../groovy/groovy-2.1.7/lib/groovy-test-2.1.7.jar</classpath>
+          <classpath>../groovy/groovy-2.1.7/lib/groovy-testng-2.1.7.jar</classpath>
+          <classpath>../groovy/groovy-2.1.7/lib/groovy-xml-2.1.7.jar</classpath>
+          <classpath>../groovy/groovy-2.1.7/lib/hamcrest-core-1.3.jar</classpath>
+          <classpath>../groovy/groovy-2.1.7/lib/ivy-2.2.0.jar</classpath>
+          <classpath>../groovy/groovy-2.1.7/lib/jansi-1.6.jar</classpath>
+          <classpath>../groovy/groovy-2.1.7/lib/jcommander-1.27.jar</classpath>
+          <classpath>../groovy/groovy-2.1.7/lib/jline-1.0.jar</classpath>
+          <classpath>../groovy/groovy-2.1.7/lib/jsp-api-2.0.jar</classpath>
+          <classpath>../groovy/groovy-2.1.7/lib/jsr166y-1.7.0.jar</classpath>
+          <classpath>../groovy/groovy-2.1.7/lib/junit-4.11.jar</classpath>
+          <classpath>../groovy/groovy-2.1.7/lib/qdox-1.12.1.jar</classpath>
+          <classpath>../groovy/groovy-2.1.7/lib/servlet-api-2.4.jar</classpath>
+          <classpath>../groovy/groovy-2.1.7/lib/testng-6.8.jar</classpath>
+          <classpath>../groovy/groovy-2.1.7/lib/xmlpull-1.1.3.1.jar</classpath>
+          <classpath>../groovy/groovy-2.1.7/lib/xstream-1.4.2.jar</classpath>
+          <docpath>../groovy/groovy-2.1.7/doc/html/api</docpath>
+          <docpath>../groovy/groovy-2.1.7/doc/html/gapi</docpath>
+          <docpath>../groovy/groovy-2.1.7/doc/html/groovy-jdk</docpath>
+          <srcpath>../groovy/groovy-2.1.7/src/src/main/</srcpath>
           <!-- TODO: add all subprojects 
-          <srcpath>${jdev.groovy.home}/src/src/main/</srcpath>
+          <srcpath>../groovy/groovy-2.1.7/src/src/main/</srcpath>
           <srcpath>${jdev.groovy.home}/src/src/main/</srcpath>
           -->
         </library>
@@ -91,9 +95,6 @@
             <node-type>com.jacobd.j1.groovy.GroovyNode</node-type>
           </document-info>
         </document-infos>
-        <extension-to-content-type>
-          <mapping extension=".groovy"/>
-        </extension-to-content-type>
         <url-recognizer>
           <file-extension>
             <extension>.groovy</extension>
@@ -102,6 +103,14 @@
         </url-recognizer>
       </node-recognizers-hook>
 
+      <starter-factory-hook xmlns="http://xmlns.oracle.com/ide/extension/runner">
+        <starter-factory class="com.jacobd.j1.groovy.runner.GroovyStarterFactory"
+                         rule="always-enabled" target-class="com.jacobd.j1.groovy.GroovyNode"/>
+      </starter-factory-hook>
+      <singleton-provider-hook>
+        <singleton base-class="com.jacobd.j1.groovy.GroovyManager"
+                   impl-class="com.jacobd.j1.groovy.GroovyManagerImpl"/>
+      </singleton-provider-hook>
     </triggers>
   </trigger-hooks>
   <hooks>
