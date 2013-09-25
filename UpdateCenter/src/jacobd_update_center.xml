@@ -20,8 +20,9 @@
     <post-startup-hook>com.jacobd.j1.groovy.installer.GroovyInstaller</post-startup-hook>
   </update>
   <!-- 12.x Groovy Installer Bundle -->
-  <upc:updates version="1.0" xmlns="http://xmlns.oracle.com/jdeveloper/update"
+  <!--<upc:updates version="1.0" xmlns="http://xmlns.oracle.com/jdeveloper/update"
                xmlns:upc="http://xmlns.oracle.com/jdeveloper/updatecenter">
+               -->
     <update id="com.jacobd.j1.groovy.installer">
       <name>Groovy Installing Extension</name>
       <version>1.0.0</version>
