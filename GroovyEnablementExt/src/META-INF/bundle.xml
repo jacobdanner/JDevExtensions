@@ -2,7 +2,7 @@
 <ub:update-bundle version="1.0" 
   xmlns:ub="http://xmlns.oracle.com/jdeveloper/updatebundle"
   xmlns="http://xmlns.oracle.com/jdeveloper/update">
-  <update id="com.jacobd.j1.groovy.enabler">
+  <update id="com.jacobd.jdev.ext.groovy.enabler">
     <name>Groovy Niceties Extension</name>
     <version>1.0.0</version>
     <category-id>Groovy</category-id>

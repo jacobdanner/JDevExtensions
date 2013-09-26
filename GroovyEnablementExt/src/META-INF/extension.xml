@@ -1,13 +1,13 @@
-<extension id="com.jacobd.j1.groovy.enabler" version="1.0.0" esdk-version="2.0"
-           rsbundle-class="com.jacobd.j1.groovy.EnablerRes" xmlns="http://jcp.org/jsr/198/extension-manifest">
+<extension id="com.jacobd.jdev.ext.groovy.enabler" version="1.0.0" esdk-version="2.0"
+           rsbundle-class="com.jacobd.jdev.ext.groovy.EnablerRes" xmlns="http://jcp.org/jsr/198/extension-manifest">
   <name>${EXTENSION_NAME}</name>
   <owner>${EXTENSION_OWNER}</owner>
   <trigger-hooks xmlns="http://xmlns.oracle.com/ide/extension">
     <triggers>
       <externaltools xmlns="http://xmlns.oracle.com/ide/extension">
         <macro macro="groovy.home" name="JDev Groovy Home"
-               description="The Groovy Home installed by the com.jacob.j1.groovy.installer"
-               implClass="com.jacobd.j1.groovy.macro.GroovyHomeMacro"/>
+               description="The Groovy Home installed by the com.jacob.jdev.ext.groovy.installer"
+               implClass="com.jacobd.jdev.ext.groovy.macro.GroovyHomeMacro"/>
       </externaltools>
       <gallery xmlns="http://xmlns.oracle.com/jdeveloper/1013/extension">
         <folders>
@@ -16,7 +16,7 @@
           <category>Groovy</category>
         </folders>
         <item rule="context-has-project">
-          <name>com.jacobd.j1.groovy.wizard.GroovyScriptBuilder</name>
+          <name>com.jacobd.jdev.ext.groovy.wizard.GroovyScriptBuilder</name>
           <description>Create a new Groovy Script</description>
           <help>Creates a new Groovy Script</help>
           <icon>${GROOVY_ICN_NODE_16X16}</icon>
@@ -92,7 +92,7 @@
           <document-info>
             <label>${GROOVY_SCRIPT_LABEL}</label>
             <icon>res:${GROOVY_ICN_NODE_16X16}</icon>
-            <node-type>com.jacobd.j1.groovy.GroovyNode</node-type>
+            <node-type>com.jacobd.jdev.ext.groovy.GroovyNode</node-type>
           </document-info>
         </document-infos>
         <url-recognizer>
@@ -104,8 +104,8 @@
       </node-recognizers-hook>
 
       <starter-factory-hook xmlns="http://xmlns.oracle.com/ide/extension/runner">
-        <starter-factory class="com.jacobd.j1.groovy.runner.GroovyStarterFactory"
-                         rule="always-enabled" target-class="com.jacobd.j1.groovy.GroovyNode"/>
+        <starter-factory class="com.jacobd.jdev.ext.groovy.runner.GroovyStarterFactory"
+                         rule="always-enabled" target-class="com.jacobd.jdev.ext.groovy.GroovyNode"/>
       </starter-factory-hook>
       <singleton-provider-hook>
         <singleton base-class="com.jacobd.jdev.ext.groovy.GroovyManager"

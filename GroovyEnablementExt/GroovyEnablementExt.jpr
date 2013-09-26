@@ -45,7 +45,7 @@
       <string v="oracle.bm.commonIde.data.project.ModelerProjectSettings/modelersContentSet"/>
       <string v="oracle.toplink.workbench.addin/toplinkContentSet"/>
    </list>
-   <value n="defaultPackage" v="com.jacobd.j1.groovy"/>
+   <value n="defaultPackage" v="com.jacobd.jdev.ext.groovy"/>
    <hash n="extensiondtProperties">
       <value n="extensiondt.deploymentdir" v="jdev/extensions/"/>
       <url n="extensiondt.manifest" path="src/META-INF/extension.xml"/>
@@ -83,7 +83,7 @@
                   <url path="src/META-INF/MANIFEST.MF"/>
                </list>
                <value n="bundleManifestVersion" v="2.0.0"/>
-               <value n="bundleSymbolicName" v="com.jacobd.j1.groovy.enabler"/>
+               <value n="bundleSymbolicName" v="com.jacobd.jdev.ext.groovy.enabler"/>
                <value n="bundleVersion" v="1.0.0"/>
                <value n="hasManifest" v="true"/>
             </hash>
@@ -134,7 +134,7 @@
             <hash n="importDefinition">
                <hash n="rules"/>
             </hash>
-            <url n="jarURL" path="../../../../clean_jdev/jdeveloper/jdev/extensions/com.jacobd.j1.groovy.enabler.jar"/>
+            <url n="jarURL" path="../../../../clean_jdev/jdeveloper/jdev/extensions/com.jacobd.jdev.ext.groovy.enabler.jar"/>
             <value n="profileClass" v="oracle.jdevimpl.extensiondt.deploy.ExtensionProfile"/>
             <value n="profileName" v="edtExtensionProfile"/>
             <hash n="requireBundles">
@@ -183,6 +183,10 @@
                      <value n="displayName" v="extJar"/>
                      <hash n="filters">
                         <list n="rules">
+                           <hash>
+                              <value n="pattern" v="**"/>
+                              <value n="type" v="1"/>
+                           </hash>
                            <hash>
                               <value n="pattern" v="com.jacobd.j1.groovy.enabler.jar"/>
                               <value n="type" v="0"/>
@@ -234,7 +238,7 @@
                   </hash>
                </list>
             </hash>
-            <url n="jarURL" path="deploy/groovyEnablementBundler.zip"/>
+            <url n="jarURL" path="deploy/groovyEnablementBundle.zip"/>
             <value n="profileClass" v="oracle.jdeveloper.deploy.jar.ArchiveProfile"/>
             <value n="profileName" v="groovyEnablementBundler"/>
          </hash>

@@ -20,7 +20,7 @@ public class GroovyEnablerBundle
   {
   }
 
-  private static final String RES_BUNDLE_PROP_FILE = "com.jacobd.j1.groovy.EnablerRes";
+  private static final String RES_BUNDLE_PROP_FILE = "com.jacobd.jdev.ext.groovy.EnablerRes";
   private static ResourceBundle instance;
 
   public static final ResourceBundle getBundle()
