@@ -20,4 +20,5 @@ Require-Bundle: oracle.ide,
  oracle.ide.webbrowser,
  oracle.ide.webupdate,
  oracle.ide.gallery,
- oracle.ide.library
+ oracle.ide.library,
+ oracle.javaxide

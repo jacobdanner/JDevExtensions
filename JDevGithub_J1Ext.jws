@@ -23,13 +23,12 @@
    </list>
    <list n="listOfChildren">
       <hash><url n="URL" path="GroovyEnablementExt/GroovyEnablementExt.jpr"/></hash>
-      <hash><url n="URL" path="GroovyInstallerExt/GroovyInstallerExt.jpr"/></hash>
       <hash><url n="URL" path="TestApp/TestApp.jpr"/></hash>
       <hash><url n="URL" path="UpdateCenter/UpdateCenter.jpr"/></hash>
    </list>
    <hash n="oracle.jdeveloper.extensiondt.PlatformDefinitions">
       <hash n="7e53f4f0d9b8125114f59fafa884b20c">
-         <url n="icon" path="../jd_12.1.3/jdeveloper/configuration/../jdev/extensions/oracle.jdeveloper.jar" jar-entry="oracle/jdeveloper/icons/images/jdev_icon.gif"/>
+         <url n="icon" path="../jd_12.1.3/jdeveloper/jdev/extensions/oracle.jdeveloper.jar" jar-entry="oracle/jdeveloper/icons/images/jdev_icon.gif"/>
          <url n="installRoot" path="../jd_12.1.3/jdeveloper/"/>
          <value n="name" v="Oracle JDeveloper 12c Development Build 12.1.3.0.41.130917.1301"/>
          <value n="productBootFile" v="jdev/bin/jdev.boot"/>

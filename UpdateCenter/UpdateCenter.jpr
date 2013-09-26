@@ -272,6 +272,16 @@
          </list>
       </hash>
    </hash>
+   <hash n="oracle.jdeveloper.model.PathsConfiguration">
+      <hash n="javaContentSet">
+         <list n="pattern-filters">
+            <string v="+jacobd_update_center.xml"/>
+         </list>
+         <list n="url-path">
+            <url path="../"/>
+         </list>
+      </hash>
+   </hash>
    <hash n="oracle.jdevimpl.config.JProjectPaths">
       <url n="outputDirectory" path="classes/"/>
    </hash>

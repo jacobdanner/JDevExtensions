@@ -13,10 +13,7 @@
     Until its natively available, this extension adds some groovy niceties to jdeveloper
    </description>
    <requirements>
-      <requires-extension id="oracle.jdeveloper" />
-          <!-- minVersion="12.1.3.0.41.130909.2200"  -->
-      <requires-extension id="com.jacobd.j1.groovy.installer" />
-        <!-- minVersion="12.1.3.0.41.130909.2200"/> -->
+      <requires-extension id="oracle.jdeveloper" minVersion="12.1.3"  />
       
     </requirements>
     <!--
@@ -24,5 +21,7 @@
     
     <destination>${oracle.home}</destination>
     -->
+      <post-startup-hook>com.jacobd.j1.groovy.installer.GroovyInstaller</post-startup-hook>
+  
   </update>
 </ub:update-bundle>
