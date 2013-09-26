@@ -1,4 +1,4 @@
-package com.jacobd.j1.groovy.installer;
+package com.jacobd.jdev.ext.groovy.installer;
 
 import oracle.ide.net.URLFactory;
 import oracle.ide.net.URLFileSystem;

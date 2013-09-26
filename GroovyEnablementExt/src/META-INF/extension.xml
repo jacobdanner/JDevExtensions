@@ -98,7 +98,7 @@
         <url-recognizer>
           <file-extension>
             <extension>.groovy</extension>
-            <node-type>com.jacobd.j1.groovy.GroovyNode</node-type>
+            <node-type>com.jacobd.jdev.ext.groovy.GroovyNode</node-type>
           </file-extension>
         </url-recognizer>
       </node-recognizers-hook>
@@ -108,8 +108,8 @@
                          rule="always-enabled" target-class="com.jacobd.j1.groovy.GroovyNode"/>
       </starter-factory-hook>
       <singleton-provider-hook>
-        <singleton base-class="com.jacobd.j1.groovy.GroovyManager"
-                   impl-class="com.jacobd.j1.groovy.GroovyManagerImpl"/>
+        <singleton base-class="com.jacobd.jdev.ext.groovy.GroovyManager"
+                   impl-class="com.jacobd.jdev.ext.groovy.GroovyManagerImpl"/>
       </singleton-provider-hook>
     </triggers>
   </trigger-hooks>

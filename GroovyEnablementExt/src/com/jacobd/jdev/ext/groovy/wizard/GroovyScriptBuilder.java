@@ -1,12 +1,12 @@
-package com.jacobd.j1.groovy.wizard;
+package com.jacobd.jdev.ext.groovy.wizard;
 
-import com.jacobd.j1.groovy.GroovyEnablerBundle;
+import com.jacobd.jdev.ext.groovy.GroovyEnablerBundle;
 
 import java.awt.Image;
 
 import javax.swing.Icon;
 
-import com.jacobd.j1.groovy.icons.GroovyIcon;
+import com.jacobd.jdev.ext.groovy.icons.GroovyIcon;
 import oracle.ide.Context;
 
 import oracle.javatools.icons.OracleIcons;

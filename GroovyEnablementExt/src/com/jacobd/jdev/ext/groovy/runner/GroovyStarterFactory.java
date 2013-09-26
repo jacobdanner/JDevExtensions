@@ -1,6 +1,6 @@
-package com.jacobd.j1.groovy.runner;
+package com.jacobd.jdev.ext.groovy.runner;
 
-import com.jacobd.j1.groovy.GroovyNode;
+import com.jacobd.jdev.ext.groovy.GroovyNode;
 import oracle.ide.model.Node;
 import oracle.ide.runner.AbstractStarterFactory;
 import oracle.ide.runner.RunProcess;

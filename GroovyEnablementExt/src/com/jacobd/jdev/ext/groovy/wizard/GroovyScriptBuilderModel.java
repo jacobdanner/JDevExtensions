@@ -1,7 +1,7 @@
-package com.jacobd.j1.groovy.wizard;
+package com.jacobd.jdev.ext.groovy.wizard;
 
-import com.jacobd.j1.groovy.GroovyEnablerBundle;
-import com.jacobd.j1.groovy.GroovyNode;
+import com.jacobd.jdev.ext.groovy.GroovyEnablerBundle;
+import com.jacobd.jdev.ext.groovy.GroovyNode;
 import oracle.ide.Context;
 import oracle.ide.net.DefaultNameGenerator;
 import oracle.ide.net.NameGenerator;

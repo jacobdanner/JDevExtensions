@@ -1,6 +1,6 @@
-package com.jacobd.j1.groovy;
+package com.jacobd.jdev.ext.groovy;
 
-import com.jacobd.j1.groovy.installer.GroovyInstaller;
+import com.jacobd.jdev.ext.groovy.installer.GroovyInstaller;
 import oracle.ide.Context;
 import oracle.ide.Ide;
 import oracle.ide.model.SingletonProvider;

@@ -1,4 +1,4 @@
-package com.jacobd.j1.groovy.runner;
+package com.jacobd.jdev.ext.groovy.runner;
 
 import oracle.ide.log.StyledMessage;
 import oracle.ide.runner.RunLogPage;

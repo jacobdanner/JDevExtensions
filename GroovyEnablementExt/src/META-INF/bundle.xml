@@ -21,7 +21,7 @@
     
     <destination>${oracle.home}</destination>
     -->
-      <post-startup-hook>com.jacobd.j1.groovy.installer.GroovyInstaller</post-startup-hook>
+      <post-startup-hook>com.jacobd.jdev.ext.groovy.installer.GroovyInstaller</post-startup-hook>
   
   </update>
 </ub:update-bundle>

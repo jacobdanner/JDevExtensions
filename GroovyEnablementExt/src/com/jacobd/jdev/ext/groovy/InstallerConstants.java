@@ -1,4 +1,4 @@
-package com.jacobd.j1.groovy;
+package com.jacobd.jdev.ext.groovy;
 
 /**
  * @author jdanner

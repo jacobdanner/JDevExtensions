@@ -1,6 +1,6 @@
-package com.jacobd.j1.groovy.installer;
+package com.jacobd.jdev.ext.groovy.installer;
 
-import com.jacobd.j1.groovy.InstallerConstants;
+import com.jacobd.jdev.ext.groovy.InstallerConstants;
 
 import oracle.bali.ewt.dialog.JEWTDialog;
 import oracle.ide.ExtensionRegistry;

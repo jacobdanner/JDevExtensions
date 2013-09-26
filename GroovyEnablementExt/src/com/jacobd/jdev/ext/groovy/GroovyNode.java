@@ -1,6 +1,6 @@
-package com.jacobd.j1.groovy;
+package com.jacobd.jdev.ext.groovy;
 
-import com.jacobd.j1.groovy.icons.GroovyIcon;
+import com.jacobd.jdev.ext.groovy.icons.GroovyIcon;
 import oracle.ide.model.TextNode;
 
 import javax.swing.*;

@@ -1,7 +1,7 @@
-package com.jacobd.j1.groovy;
+package com.jacobd.jdev.ext.groovy;
 
-import com.jacobd.j1.groovy.installer.GroovyInstaller;
-import com.jacobd.j1.groovy.runner.GroovyRunProcess;
+import com.jacobd.jdev.ext.groovy.installer.GroovyInstaller;
+import com.jacobd.jdev.ext.groovy.runner.GroovyRunProcess;
 
 import oracle.ide.Context;
 import oracle.ide.Ide;
@@ -34,8 +34,8 @@ public class GroovyManagerImpl
     if (GROOVY_HOME == null)
     {
       URL installDir =
-        URLFactory.newDirURL(Ide.getProductHomeDirectory()+"/"+InstallerConstants.GROOVY_DIR + "/" + InstallerConstants.GROOVY_DIR + "-" +
-                             InstallerConstants.GROOVY_VERSION);
+        URLFactory.newDirURL(Ide.getProductHomeDirectory()+"/" + InstallerConstants.GROOVY_DIR + "/" +
+                             InstallerConstants.GROOVY_DIR + "-" + InstallerConstants.GROOVY_VERSION);
       LOGGER.info("installDir == " + URLFileSystem.getPlatformPathName(installDir));
       GROOVY_HOME = installDir;
     }

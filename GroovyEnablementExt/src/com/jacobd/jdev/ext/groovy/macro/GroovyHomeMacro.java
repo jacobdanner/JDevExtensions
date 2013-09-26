@@ -1,4 +1,4 @@
-package com.jacobd.j1.groovy.macro;
+package com.jacobd.jdev.ext.groovy.macro;
 
 import oracle.ide.Context;
 import oracle.ide.externaltools.macro.MacroExpander;

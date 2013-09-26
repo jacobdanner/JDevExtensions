@@ -1,6 +1,6 @@
-package com.jacobd.j1.groovy.icons;
+package com.jacobd.jdev.ext.groovy.icons;
 
-import com.jacobd.j1.groovy.GroovyEnablerBundle;
+import com.jacobd.jdev.ext.groovy.GroovyEnablerBundle;
 
 import javax.swing.*;
 

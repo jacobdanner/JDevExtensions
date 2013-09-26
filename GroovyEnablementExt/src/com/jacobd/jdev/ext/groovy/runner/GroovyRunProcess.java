@@ -1,8 +1,8 @@
-package com.jacobd.j1.groovy.runner;
+package com.jacobd.jdev.ext.groovy.runner;
 
-import com.jacobd.j1.groovy.GroovyEnablerBundle;
-import com.jacobd.j1.groovy.GroovyNode;
-import com.jacobd.j1.groovy.icons.GroovyIcon;
+import com.jacobd.jdev.ext.groovy.GroovyEnablerBundle;
+import com.jacobd.jdev.ext.groovy.GroovyNode;
+import com.jacobd.jdev.ext.groovy.icons.GroovyIcon;
 import oracle.ide.Context;
 import oracle.ide.model.Node;
 import oracle.ide.model.NodeFactory;

@@ -1,4 +1,4 @@
-package com.jacobd.j1.groovy.installer;
+package com.jacobd.jdev.ext.groovy.installer;
 
 import java.io.File;
 import java.io.IOException;
